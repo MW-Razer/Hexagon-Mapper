@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "Geo";
+    src: url("../fonts/NMSGeoSansLight.ttf");
+}
+
+@font-face {
+    font-family: "Josefin";
+    src: url("../fonts/JosefinSans.ttf");
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/LatoRegular.ttf");
+}
+
+:root {
+
+    /* base background and fonts */
+	--background-color: rgb(240, 240, 240);
+    --title-font: Geo;
+    --header-font: Josefin;
+    --text-font: Lato;
+    --cursor-pointer: pointer;
+
+    /* mechanical buttons */
+    --mech-color: rgb(240, 240, 240);
+    --mech-div-color: rgb(200, 200, 200);
+    --mech-color-hover: rgb(190, 220, 240);
+    --mech-div-color-hover: rgb(120, 190, 230);
+    --mech-color-active: rgb(50, 150, 200);
+    --mech-div-color-active: rgb(0, 75, 150);
+	--mech-border-color: rgb(10, 10, 10);
+	--mech-div-border-color: rgb(50, 50, 50);
+    --mech-font-color: rgb(0, 0, 0);
+    --mech-font-color-active: rgb(255, 255, 255);
+    --mech-color-sel: rgb(50, 150, 200);
+    --mech-div-color-sel: rgb(0, 75, 150);
+    --mech-color-hover-sel: rgb(70, 170, 220);
+    --mech-div-color-hover-sel: rgb(20, 95, 170);
+    --mech-color-active-sel: rgb(30, 130, 180);
+    --mech-div-color-active-sel: rgb(0, 50, 130);
+	--mech-border-color-sel: rgb(10, 10, 10);
+	--mech-div-border-color-sel: rgb(50, 50, 50);
+    --mech-font-color-sel: rgb(255, 255, 255);
+    --mech-font-color-active-sel: rgb(255, 255, 255);
+	--mech-border-radius: 20px 5px 20px 5px;
+
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+}

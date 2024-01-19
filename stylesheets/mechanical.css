@@ -1,46 +1,4 @@
-
-@font-face {
-    font-family: "Geo";
-    src: url("fonts/NMSGeoSansLight.ttf");
-}
-
-@font-face {
-    font-family: "Josefin";
-    src: url("fonts/JosefinSans.ttf");
-}
-
-@font-face {
-    font-family: "Lato";
-    src: url("fonts/LatoRegular.ttf");
-}
-
-:root {
-	--background-color: rgb(240, 240, 240);
-    --title-font: Geo;
-    --header-font: Josefin;
-    --text-font: Lato;
-    --cursor-pointer: pointer;
-    --mech-color: rgb(240, 240, 240);
-    --mech-div-color: rgb(200, 200, 200);
-	--mech-border-color: rgb(10, 10, 10);
-	--mech-div-border-color: rgb(50, 50, 50);
-    --mech-color-hover: rgb(190, 220, 240);
-    --mech-div-color-hover: rgb(120, 190, 230);
-    --mech-color-active: rgb(50, 150, 200);
-    --mech-div-color-active: rgb(0, 75, 150);
-    --mech-font-color: rgb(0, 0, 0);
-    --mech-font-color-active: rgb(255, 255, 255);
-	--mech-border-radius: 20px 5px 20px 5px;
-}
-
-html, body {
-    padding: 0;
-    margin: 0;
-    overflow: auto;
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-color);
-}
+/* containers for jiggly buttons */
 
 div.mechcontainer {
     position: absolute;
@@ -98,6 +56,44 @@ div.mechcontainer:active button {
 
 div.mechcontainer:active div {
     background-color: var(--mech-div-color-active);
+    transition: background-color 0.05s ease-out;
+}
+
+/* when toggled on */
+div.mechcontainer.selected button {
+    background-color: var(--mech-color-sel);
+    color: var(--mech-font-color-sel);
+    border-color: var(--mech-border-color-sel);
+    top: 15%;
+    transition: top 0.1s ease-out, background-color 0.1s ease-out;
+}
+
+div.mechcontainer.selected div {
+    background-color: var(--mech-div-color-sel);
+    border-color: var(--mech-div-border-color-sel);
+    transition: background-color 0.1s ease-out;
+}
+
+div.mechcontainer.selected:hover button {
+    background-color: var(--mech-color-hover-sel);
+    top: 12.5%;
+    transition: top 0.1s ease-out, background-color 0.1s ease-out;
+}
+
+div.mechcontainer.selected:hover div {
+    background-color: var(--mech-div-color-hover-sel);
+    transition: background-color 0.1s ease-out;
+}
+
+div.mechcontainer.selected:active button {
+    background-color: var(--mech-color-active-sel);
+    color: var(--mech-font-color-active-sel);
+    top: 17.5%;
+    transition: top 0.05s ease-out, background-color 0.05s ease-out;
+}
+
+div.mechcontainer.selected:active div {
+    background-color: var(--mech-div-color-active-sel);
     transition: background-color 0.05s ease-out;
 }
 

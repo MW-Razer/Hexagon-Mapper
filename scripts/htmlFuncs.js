@@ -1,3 +1,5 @@
+// css var setters
+
 const css_root = document.querySelector(':root');
 
 function css_get(v) {
@@ -12,17 +14,26 @@ function css_set(v, prop) {
 
 }
 
+// common functionalities
+
+function getElem(comp) {
+  return typeof comp === "string" ? document.getElementById(comp) : comp;
+}
+
 function hide(elem) {
+  elem = getElem(elem);
   elem.classList.add('hidden');
   elem.style.opacity = 0;
 }
 
 function show(elem) {
+  elem = getElem(elem);
   elem.classList.remove('hidden');
   elem.style.opacity = 1;
 }
 
 function toggleVis(elem) {
+  elem = getElem(elem);
   if (elem.classList.contains('hidden')) {
     show(elem);
   } else {
@@ -31,14 +42,17 @@ function toggleVis(elem) {
 }
 
 function sel(elem) {
+  elem = getElem(elem);
   elem.classList.add('selected');
 }
 
 function desel(elem) {
+  elem = getElem(elem);
   elem.classList.remove('selected');
 }
 
 function toggleSel(elem) {
+  elem = getElem(elem);
   if (elem.classList.contains('selected')) {
     desel(elem);
   } else {

@@ -1,11 +1,10 @@
 // jiggle the text inside buttons
-// dunno how else to describe it
+// buttons with jiggly text MUST be placed inside a same-size container
 
-let letterDelay = 150;
-let restartDelay = 800;
+const letterDelay = 150;
+const restartDelay = 800;
 
-let containers = document.getElementsByClassName("mechcontainer");
-let buttons = document.getElementsByClassName("jigglebutton");
+const buttons = document.getElementsByClassName("jigglebutton");
 
 let jiggler = null;
 let jigglerDelay = null;
@@ -19,10 +18,7 @@ const jiggleFunc = (elem) => {
 
     jiggler = setInterval(() => {
 
-        //console.log(`letter: ${counter}, elem: ${elem.children[0].innerHTML}`);
-
         let spans = elem.children;
-        //console.log(spans)
 
         for (let i = 0; i < spans.length; i++) {
 
@@ -70,7 +66,7 @@ const clearJiggle = (elem) => {
 
 };
 
-for (let i = 0; i < containers.length; i++) {
+for (let i = 0; i < buttons.length; i++) {
 
     let inner = buttons[i].innerHTML;
 
@@ -87,13 +83,13 @@ for (let i = 0; i < containers.length; i++) {
 
     }
 
-    containers[i].addEventListener('mouseenter', (e) => {
+    buttons[i].parentElement.addEventListener('mouseenter', (e) => {
 
         jiggleFunc(e.target.children[1]);
 
     });
 
-    containers[i].addEventListener('mouseleave', (e) => {
+    buttons[i].parentElement.addEventListener('mouseleave', (e) => {
 
         clearJiggle(e.target.children[1]);
 
@@ -103,9 +99,7 @@ for (let i = 0; i < containers.length; i++) {
 
 // ensure it goes away (the mouse leave event doesnt like working correctly)
 addEventListener('mousemove', (e) => {
-
-    //console.log(e.target.classList.contains('mechcontainer'), e.target.classList.contains('jigglebutton'), e.target.classList.contains('jigglediv'), e.target.classList.contains('jigglespan'));
-
+    
     if (!e.target.classList.contains('mechcontainer') && !e.target.classList.contains('jigglebutton') && !e.target.classList.contains('jigglediv') && !e.target.classList.contains('jigglespan')) {
         let newButtons = document.getElementsByClassName('jigglebutton');
         for (let i = 0; i < newButtons.length; i++) {
