@@ -138,7 +138,11 @@ class Theme {
         let themeCount = themes.length;
 
         bc.onclick = function() {
+
             themes[themeCount].set();
+
+            selGroup(this, document.getElementById('themesDiv').children);
+
         };
 
         b.innerHTML = `${name}`;
@@ -202,6 +206,8 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--panel-border-color', 'rgb(10, 10, 10)'],
     ['--panel-border-radius', '10px 10px 10px 10px']
 ]);
+
+document.getElementById('cool_light_container').click();
 
 const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     // background

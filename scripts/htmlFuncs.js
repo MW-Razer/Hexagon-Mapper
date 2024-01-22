@@ -60,4 +60,15 @@ function toggleSel(elem) {
   }
 }
 
+// selects elem, desels all in group
+function selGroup(elem, group) {
+
+  for (let i = 0; i < group.length; i++) {
+    desel(group[i]);
+  }
+
+  sel(elem);
+
+}
+
 // menu functionality
