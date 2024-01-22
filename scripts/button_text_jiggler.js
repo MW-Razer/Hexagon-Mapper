@@ -66,11 +66,12 @@ const clearJiggle = (elem) => {
 
 };
 
-for (let i = 0; i < buttons.length; i++) {
+// adds a jiggle effect to a button
+const addJiggle = (button) => {
 
-    let inner = buttons[i].innerHTML;
+    let inner = button.innerHTML;
 
-    buttons[i].innerHTML = ``;
+    button.innerHTML = ``;
 
     for (let k = 0; k < inner.length; k++) {
 
@@ -79,21 +80,27 @@ for (let i = 0; i < buttons.length; i++) {
 
         s.innerHTML = inner[k];
 
-        buttons[i].appendChild(s);
+        button.appendChild(s);
 
     }
 
-    buttons[i].parentElement.addEventListener('mouseenter', (e) => {
+    button.parentElement.addEventListener('mouseenter', (e) => {
 
         jiggleFunc(e.target.children[1]);
 
     });
 
-    buttons[i].parentElement.addEventListener('mouseleave', (e) => {
+    button.parentElement.addEventListener('mouseleave', (e) => {
 
         clearJiggle(e.target.children[1]);
 
     });
+    
+}
+
+for (let i = 0; i < buttons.length; i++) {
+
+    addJiggle(buttons[i]);
 
 }
 
