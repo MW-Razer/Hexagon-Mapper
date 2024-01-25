@@ -67,9 +67,10 @@ class Theme {
             font: 16px ${findContainer(vars, '--header-font', true)[1]};\n
             border-radius: ${findContainer(vars, '--mech-border-radius', true)[1]};\n
             border: 1px solid ${findContainer(vars, '--mech-border-color', true)[1]};\n
-            background-color: ${findContainer(vars, '--mech-color', true)[1]};\n
+            background: ${findContainer(vars, '--mech-color', true)[1]};\n
+            background-size: 101% 100%;\n
             color: ${findContainer(vars, '--mech-font-color', true)[1]};\n
-            transition: top 0.1s ease-out, background-color 0.1s ease-out, color 0.05s ease-out;\n
+            transition: top 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out, color 0.05s ease-out;\n
         }\n
         #${this.id}_div {\n
             position: absolute;\n
@@ -80,58 +81,69 @@ class Theme {
             height: 90%;\n
             border-radius: ${findContainer(vars, '--mech-border-radius', true)[1]};\n
             border: 1px solid ${findContainer(vars, '--mech-div-border-color', true)[1]};\n
-            background-color: ${findContainer(vars, '--mech-div-color', true)[1]};\n
-            transition: background-color 0.1s ease-out;\n
+            background: ${findContainer(vars, '--mech-div-color', true)[1]};\n
+            background-size: 101% 100%;\n
+            transition: background-color 0.1s ease-out, background-image 0.1s ease-out;\n
         }\n
         #${this.id}_container:hover button {\n
-            background-color: ${findContainer(vars, '--mech-color-hover', true)[1]};\n
+            background: ${findContainer(vars, '--mech-color-hover', true)[1]};\n
+            background-size: 101% 100%;\n
             top: 0%;\n
-            transition: top 0.1s ease-out, background-color 0.1s ease-out;\n
+            transition: top 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;\n
         }\n
         #${this.id}_container:hover div {\n
-            background-color: ${findContainer(vars, '--mech-div-color-hover', true)[1]};\n
-            transition: background-color 0.1s ease-out;\n
+            background: ${findContainer(vars, '--mech-div-color-hover', true)[1]};\n
+            background-size: 101% 100%;\n
+            transition: background-color 0.1s ease-out, background-image 0.1s ease-out;\n
         }\n
         #${this.id}_container:active button {\n
-            background-color: ${findContainer(vars, '--mech-color-active', true)[1]};\n
+            background: ${findContainer(vars, '--mech-color-active', true)[1]};\n
+            background-size: 101% 100%;\n
             color: ${findContainer(vars, '--mech-font-color-active', true)[1]};\n
             top: 15%;\n
-            transition: top 0.05s ease-out, background-color 0.05s ease-out;\n
+            transition: top 0.05s ease-out, background-color 0.05s ease-out, background-image 0.05s ease-out;\n
         }\n
         #${this.id}_container:active div {\n
-            background-color: ${findContainer(vars, '--mech-div-color-active', true)[1]};\n
-            transition: background-color 0.05s ease-out;\n
+            background: ${findContainer(vars, '--mech-div-color-active', true)[1]};\n
+            background-size: 101% 100%;\n
+            transition: background-color 0.05s ease-out, background-image 0.05s ease-out;\n
         }\n
         #${this.id}_container.selected button {\n
-            background-color: ${findContainer(vars, '--mech-color-sel', true)[1]};\n
+            background: ${findContainer(vars, '--mech-color-sel', true)[1]};\n
+            background-size: 101% 100%;\n
             color: ${findContainer(vars, '--mech-font-color-sel', true)[1]};\n
             border-color: ${findContainer(vars, '--mech-border-color-sel', true)[1]};\n
             top: 15%;\n
-            transition: top 0.1s ease-out, background-color 0.1s ease-out;\n
+            transition: top 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;\n
         }\n
         #${this.id}_container.selected div {\n
-            background-color: ${findContainer(vars, '--mech-div-color-sel', true)[1]};\n
+            background: ${findContainer(vars, '--mech-div-color-sel', true)[1]};\n
+            background-size: 101% 100%;\n
             border-color: ${findContainer(vars, '--mech-div-border-color-sel', true)[1]};\n
-            transition: background-color 0.1s ease-out;\n
+            transition: background-color 0.1s ease-out, background-image 0.1s ease-out;\n
         }\n
         #${this.id}_container.selected:hover button {\n
-            background-color: ${findContainer(vars, '--mech-color-hover-sel', true)[1]};\n
+            background: ${findContainer(vars, '--mech-color-hover-sel', true)[1]};\n
+            background-size: 101% 100%;\n
             top: 12.5%;\n
-            transition: top 0.1s ease-out, background-color 0.1s ease-out;\n
+            transition: top 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;\n
         }\n
         #${this.id}_container.selected:hover div {\n
-            background-color: ${findContainer(vars, '--mech-div-color-hover-sel', true)[1]};\n
-            transition: background-color 0.1s ease-out;\n
+            background: ${findContainer(vars, '--mech-div-color-hover-sel', true)[1]};\n
+            background-size: 101% 100%;\n
+            transition: background-color 0.1s ease-out, background-image 0.1s ease-out;\n
         }\n
         #${this.id}_container.selected:active button {\n
-            background-color: ${findContainer(vars, '--mech-color-active-sel', true)[1]};\n
+            background: ${findContainer(vars, '--mech-color-active-sel', true)[1]};\n
+            background-size: 101% 100%;\n
             color: ${findContainer(vars, '--mech-font-color-active-sel', true)[1]};\n
             top: 17.5%;\n
-            transition: top 0.05s ease-out, background-color 0.05s ease-out;\n
+            transition: top 0.05s ease-out, background-color 0.05s ease-out, background-image 0.05s ease-out;\n
         }\n
         #${this.id}_container.selected:active div {\n
-            background-color: ${findContainer(vars, '--mech-div-color-active-sel', true)[1]};\n
-            transition: background-color 0.05s ease-out;\n
+            background: ${findContainer(vars, '--mech-div-color-active-sel', true)[1]};\n
+            background-size: 101% 100%;\n
+            transition: background-color 0.05s ease-out, background-image 0.05s ease-out;\n
         }\n
         `;
 
@@ -391,6 +403,79 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--slider-handle-color-active', 'rgb(30, 170, 30)'],
     ['--slider-handle-border-color-active', 'rgb(40, 180, 40)'],
     ['--slider-handle-border-radius', '5px 5px 5px 5px']
+]);
+
+const blood_moon = new Theme('Blood Moon', 'blood_moon', [
+    // background
+    ['--background-color', 'rgb(5, 0, 0)'],
+    ['--title-font', 'Geo'],
+    ['--header-font', 'Josefin'],
+    ['--text-font', 'Lato'],
+    ['--text-color', 'rgb(255, 240, 240)'],
+    ['--text-color-light', 'rgb(255, 210, 210)'],
+    // inputs
+    ['--input-border-radius', '5px 5px 10px 5px'],
+    ['--input-border-color', 'rgb(220, 10, 10)'],
+    ['--input-color', 'rgb(10, 5, 5)'],
+    ['--input-color-hover', 'rgb(15, 10, 10)'],
+    ['--input-color-active', 'rgb(40, 20, 20)'],
+    ['--input-font-color-active', 'rgb(70, 250, 70)'],
+    // mechanical buttons
+    ['--mech-color', 'linear-gradient(90deg, rgba(200,10,10,1) 0%, rgba(80,20,20,1) 40%, rgba(20,10,10,1) 100%)'],
+    ['--mech-div-color', 'linear-gradient(90deg, rgba(150,10,10,1) 0%, rgba(50,10,10,1) 40%, rgba(10,5,5,1) 100%)'],
+    ['--mech-color-hover', 'linear-gradient(90deg, rgba(200,10,10,1) 0%, rgba(80,20,20,1) 66%, rgba(20,10,10,1) 100%)'],
+    ['--mech-div-color-hover', 'linear-gradient(90deg, rgba(150,10,10,1) 0%, rgba(50,10,10,1) 66%, rgba(10,5,5,1) 100%)'],
+    ['--mech-color-active', 'linear-gradient(90deg, rgba(130,20,20,1) 0%, rgba(250,10,10,1) 49%, rgba(130,20,20,1) 100%)'],
+    ['--mech-div-color-active', 'linear-gradient(90deg, rgba(100,20,20,1) 0%, rgba(200,10,10,1) 49%, rgba(100,20,20,1) 100%)'],
+	['--mech-border-color', 'rgba(220, 10, 10, 0)'],
+	['--mech-div-border-color', 'rgba(150, 10, 10, 0)'],
+    ['--mech-font-color', 'rgba(255, 255, 255, 0.8)'],
+    ['--mech-font-color-active', 'rgba(0, 0, 0, 0.8)'],
+    ['--mech-color-sel', 'linear-gradient(90deg, rgba(130,20,20,1) 0%, rgba(250,10,10,1) 49%, rgba(130,20,20,1) 100%)'],
+    ['--mech-div-color-sel', 'linear-gradient(90deg, rgba(100,20,20,1) 0%, rgba(200,10,10,1) 49%, rgba(100,20,20,1) 100%)'],
+    ['--mech-color-hover-sel', 'linear-gradient(90deg, rgba(170,20,20,1) 0%, rgba(255,40,40,1) 49%, rgba(170,20,20,1) 100%)'],
+    ['--mech-div-color-hover-sel', 'linear-gradient(90deg, rgba(130,20,20,1) 0%, rgba(220,30,30,1) 49%, rgba(130,20,20,1) 100%)'],
+    ['--mech-color-active-sel', 'linear-gradient(90deg, rgba(100,20,20,1) 0%, rgba(220,10,10,1) 49%, rgba(100,20,20,1) 100%)'],
+    ['--mech-div-color-active-sel', 'linear-gradient(90deg, rgba(80,20,20,1) 0%, rgba(200,10,10,1) 49%, rgba(80,20,20,1) 100%)'],
+	['--mech-border-color-sel', 'rgba(180, 40, 40, 0)'],
+	['--mech-div-border-color-sel', 'rgba(120, 20, 20, 0)'],
+    ['--mech-font-color-sel', 'rgb(0, 0, 0)'],
+    ['--mech-font-color-active-sel', 'rgb(0, 0, 0)'],
+	['--mech-border-radius', '5px 5px 20px 5px'],
+    // panels
+    ['--panel-color', 'linear-gradient(0deg, rgba(30,10,10,1) 0%, rgba(5,5,5,1) 100%)'],
+    ['--panel-shadow', '1px 3px 2px rgba(100, 10, 10, 0.5)'],
+    ['--panel-border-color', 'rgb(100, 10, 10)'],
+    ['--panel-border-radius', '5px 5px 10px 5px'],
+    // tabs
+    ['--navbar-color', 'rgb(15, 10, 10)'],
+    ['--navbar-border-radius', '5px 5px 0px 0px'],
+    ['--navbar-underline-color', 'linear-gradient(90deg, rgba(180,20,20,1) 0%, rgba(220,10,10,1) 49%, rgba(180,20,20,1) 100%)'],
+    ['--navbar-underline-border-radius', '0px 0px 5px 5px'],
+    ['--navbar-tab-color', 'linear-gradient(90deg, rgba(40,10,10,1) 0%, rgba(80,10,10,1) 49%, rgba(40,10,10,1) 100%)'],
+    ['--navbar-tab-color-hover', 'linear-gradient(90deg, rgba(50,10,10,1) 0%, rgba(100,20,20,1) 49%, rgba(50,10,10,1) 100%)'],
+    ['--navbar-tab-color-active', 'linear-gradient(90deg, rgba(30,10,10,1) 0%, rgba(60,10,10,1) 49%, rgba(30,10,10,1) 100%)'],
+    ['--navbar-tab-color-sel', 'linear-gradient(90deg, rgba(170,40,40,1) 0%, rgba(255,50,50,1) 49%, rgba(170,40,40,1) 100%)'],
+    ['--navbar-tab-color-hover-sel', 'linear-gradient(90deg, rgba(190,50,50,1) 0%, rgba(255,60,60,1) 49%, rgba(190,50,50,1) 100%)'],
+    ['--navbar-tab-color-active-sel', 'linear-gradient(90deg, rgba(150,30,30,1) 0%, rgba(235,40,40,1) 49%, rgba(150,30,30,1) 100%)'],
+    ['--navbar-tab-border', '1px solid rgb(200, 30, 30)'],
+    ['--navbar-tab-font-color', 'rgb(255, 240, 240)'],
+    ['--navbar-tab-font-color-sel', 'rgb(0, 0, 0)'],
+    // sliders
+    ['--slider-div-color', 'rgba(10, 5, 5, 0.5)'],
+    ['--slider-div-color-hover', 'rgba(20, 5, 5, 0.5)'],
+    ['--slider-div-color-active', 'rgba(30, 10, 10, 0.5)'],
+    ['--slider-color', 'linear-gradient(90deg, rgba(100,10,10,1) 0%, rgba(50,5,5,1) 100%)'],
+    ['--slider-color-hover', 'linear-gradient(90deg, rgba(120,15,15,1) 0%, rgba(70,15,15,1) 100%)'],
+    ['--slider-border-color', 'rgba(150, 20, 20, 0)'],
+    ['--slider-border-color-hover', 'rgba(170, 30, 30, 0)'],
+    ['--slider-border-radius', '5px 5px 5px 5px'],
+    ['--slider-handle-color', 'rgb(20, 10, 10)'],
+    ['--slider-handle-border-color', 'rgb(150, 20, 20)'],
+    ['--slider-handle-color-hover', 'rgb(40, 20, 20)'],
+    ['--slider-handle-color-active', 'rgb(170, 30, 30)'],
+    ['--slider-handle-border-color-active', 'rgb(180, 20, 20)'],
+    ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px']
 ]);
 
 // load the theme
