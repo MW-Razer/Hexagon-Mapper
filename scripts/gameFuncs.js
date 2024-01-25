@@ -16,11 +16,6 @@ function randInt(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
-function whitelistChars(whitelist, str) {
-  let regex = new RegExp(`[^${whitelist}]`, 'g');
-  return str.replace(regex, '');
-}
-
 function getAng(x1, y1, x2, y2) {
 
   let disx = x1 - x2;

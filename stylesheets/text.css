@@ -1,0 +1,12 @@
+/* text and headers and things */
+
+p {
+    position: absolute;
+    user-select: none;
+    font: 16px var(--text-font);
+    color: var(--text-color);
+}
+
+p.light {
+    color: var(--text-color-light);
+}

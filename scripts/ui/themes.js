@@ -180,6 +180,15 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--title-font', 'Geo'],
     ['--header-font', 'Josefin'],
     ['--text-font', 'Lato'],
+    ['--text-color', 'rgb(0, 0, 0)'],
+    ['--text-color-light', 'rgb(50, 50, 50)'],
+    // inputs
+    ['--input-border-radius', '10px 10px 10px 10px'],
+    ['--input-border-color', 'rgb(10, 10, 10)'],
+    ['--input-color', 'rgb(240, 240, 240)'],
+    ['--input-color-hover', 'rgb(190, 220, 240)'],
+    ['--input-color-active', 'rgb(150, 200, 240)'],
+    ['--input-font-color-active', 'rgb(0, 0, 0)'],
     // mechanical buttons
     ['--mech-color', 'rgb(240, 240, 240)'],
     ['--mech-div-color', 'rgb(200, 200, 200)'],
@@ -220,7 +229,22 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--navbar-tab-color-active-sel', 'rgb(150, 190, 230)'],
     ['--navbar-tab-border', '1px solid rgb(200, 200, 200)'],
     ['--navbar-tab-font-color', 'rgb(0, 0, 0)'],
-    ['--navbar-tab-font-color-sel', 'rgb(0, 0, 0)']
+    ['--navbar-tab-font-color-sel', 'rgb(0, 0, 0)'],
+    // sliders
+    ['--slider-div-color', 'rgb(240, 240, 240)'],
+    ['--slider-div-color-hover', 'rgb(230, 230, 230)'],
+    ['--slider-div-color-active', 'rgb(220, 220, 220)'],
+    ['--slider-color', 'rgb(200, 200, 200)'],
+    ['--slider-color-hover', 'rgb(180, 180, 180)'],
+    ['--slider-border-color', 'rgb(200, 200, 200)'],
+    ['--slider-border-color-hover', 'rgb(200, 200, 200)'],
+    ['--slider-border-radius', '5px 5px 5px 5px'],
+    ['--slider-handle-color', 'rgb(220, 220, 220)'],
+    ['--slider-handle-border-color', 'rgb(40, 40, 40)'],
+    ['--slider-handle-color-hover', 'rgb(230, 230, 230)'],
+    ['--slider-handle-color-active', 'rgb(210, 210, 210)'],
+    ['--slider-handle-border-color-active', 'rgb(10, 10, 10)'],
+    ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px']
 ]);
 
 const cool_dark = new Theme('Cool Dark', 'cool_dark', [
@@ -229,6 +253,15 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--title-font', 'Geo'],
     ['--header-font', 'Josefin'],
     ['--text-font', 'Lato'],
+    ['--text-color', 'rgb(255, 255, 255)'],
+    ['--text-color-light', 'rgb(200, 200, 200)'],
+    // inputs
+    ['--input-border-radius', '10px 10px 10px 10px'],
+    ['--input-border-color', 'rgb(210, 210, 210)'],
+    ['--input-color', 'rgb(40, 40, 40)'],
+    ['--input-color-hover', 'rgb(40, 40, 60)'],
+    ['--input-color-active', 'rgb(40, 40, 90)'],
+    ['--input-font-color-active', 'rgb(255, 255, 255)'],
     // mechanical buttons
     ['--mech-color', 'rgb(40, 40, 60)'],
     ['--mech-div-color', 'rgb(20, 20, 40)'],
@@ -269,7 +302,22 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--navbar-tab-color-active-sel', 'rgb(40, 40, 100)'],
     ['--navbar-tab-border', '1px solid rgb(60, 60, 60)'],
     ['--navbar-tab-font-color', 'rgb(255, 255, 255)'],
-    ['--navbar-tab-font-color-sel', 'rgb(255, 255, 255)']
+    ['--navbar-tab-font-color-sel', 'rgb(255, 255, 255)'],
+    // sliders
+    ['--slider-div-color', 'rgb(30, 30, 30)'],
+    ['--slider-div-color-hover', 'rgb(30, 30, 40)'],
+    ['--slider-div-color-active', 'rgb(30, 30, 60)'],
+    ['--slider-color', 'rgb(70, 70, 70)'],
+    ['--slider-color-hover', 'rgb(70, 70, 100)'],
+    ['--slider-border-color', 'rgb(70, 70, 70)'],
+    ['--slider-border-color-hover', 'rgb(70, 70, 100)'],
+    ['--slider-border-radius', '5px 5px 5px 5px'],
+    ['--slider-handle-color', 'rgb(250, 250, 250)'],
+    ['--slider-handle-border-color', 'rgb(250, 250, 250)'],
+    ['--slider-handle-color-hover', 'rgb(230, 230, 230)'],
+    ['--slider-handle-color-active', 'rgb(210, 210, 210)'],
+    ['--slider-handle-border-color-active', 'rgb(210, 210, 210)'],
+    ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px']
 ]);
 
 const matrix = new Theme('Matrix', 'matrix', [
@@ -278,6 +326,15 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--title-font', 'Geo'],
     ['--header-font', 'Courier'],
     ['--text-font', 'Lato'],
+    ['--text-color', 'rgb(10, 240, 10)'],
+    ['--text-color-light', 'rgb(70, 250, 70)'],
+    // inputs
+    ['--input-border-radius', '5px 5px 5px 5px'],
+    ['--input-border-color', 'rgb(10, 220, 10)'],
+    ['--input-color', 'rgb(5, 10, 5)'],
+    ['--input-color-hover', 'rgb(10, 15, 10)'],
+    ['--input-color-active', 'rgb(20, 40, 20)'],
+    ['--input-font-color-active', 'rgb(70, 250, 70)'],
     // mechanical buttons
     ['--mech-color', 'rgb(10, 15, 10)'],
     ['--mech-div-color', 'rgb(5, 10, 5)'],
@@ -318,7 +375,22 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--navbar-tab-color-active-sel', 'rgb(10, 180, 10)'],
     ['--navbar-tab-border', '1px solid rgb(50, 220, 50)'],
     ['--navbar-tab-font-color', 'rgb(20, 200, 20)'],
-    ['--navbar-tab-font-color-sel', 'rgb(0, 0, 0)']
+    ['--navbar-tab-font-color-sel', 'rgb(0, 0, 0)'],
+    // sliders
+    ['--slider-div-color', 'rgb(5, 10, 5)'],
+    ['--slider-div-color-hover', 'rgb(5, 20, 5)'],
+    ['--slider-div-color-active', 'rgb(10, 30, 10)'],
+    ['--slider-color', 'rgb(5, 10, 5)'],
+    ['--slider-color-hover', 'rgb(5, 10, 5)'],
+    ['--slider-border-color', 'rgb(20, 150, 20)'],
+    ['--slider-border-color-hover', 'rgb(30, 170, 30)'],
+    ['--slider-border-radius', '2px 2px 2px 2px'],
+    ['--slider-handle-color', 'rgb(10, 20, 10)'],
+    ['--slider-handle-border-color', 'rgb(20, 150, 20)'],
+    ['--slider-handle-color-hover', 'rgb(20, 40, 20)'],
+    ['--slider-handle-color-active', 'rgb(30, 170, 30)'],
+    ['--slider-handle-border-color-active', 'rgb(40, 180, 40)'],
+    ['--slider-handle-border-radius', '5px 5px 5px 5px']
 ]);
 
 // load the theme

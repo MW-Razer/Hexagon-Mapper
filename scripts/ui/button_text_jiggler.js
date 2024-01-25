@@ -4,7 +4,7 @@
 const letterDelay = 150;
 const restartDelay = 800;
 
-const buttons = document.getElementsByClassName("jigglebutton");
+let buttons = document.getElementsByClassName("jigglebutton");
 
 let jiggler = null;
 let jigglerDelay = null;
@@ -98,12 +98,6 @@ const addJiggle = (button) => {
     
 }
 
-for (let i = 0; i < buttons.length; i++) {
-
-    addJiggle(buttons[i]);
-
-}
-
 // ensure it goes away (the mouse leave event doesnt like working correctly)
 addEventListener('mousemove', (e) => {
     
@@ -115,3 +109,16 @@ addEventListener('mousemove', (e) => {
     }
 
 });
+
+
+function addAllJiggle() {
+
+    buttons = document.getElementsByClassName("jigglebutton");
+
+    for (let i = 0; i < buttons.length; i++) {
+
+        addJiggle(buttons[i]);
+
+    }
+    
+}

@@ -1,0 +1,83 @@
+/* sliders and stuff */
+
+.slidercontainer {
+    position: absolute;
+    height: 100px;
+    background-color: var(--slider-div-color);
+    transition: background-color 0.2s ease-out;
+}
+
+.slidercontainer:hover {
+    background-color: var(--slider-div-color-hover);
+}
+
+.slidercontainer:active {
+    background-color: var(--slider-div-color-active);
+}
+
+.slider {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90%;
+    height: 10px;
+    left: 5%;
+    bottom: 15px;
+    background-color: var(--slider-color);
+    border: 1px solid var(--slider-border-color);
+    border-radius: var(--slider-border-radius);
+    transition: background-color 0.1s ease-out, border-color 0.1s ease-out;
+}
+
+.slider:hover {
+    background-color: var(--slider-color-hover);
+    border-color: var(--slider-border-color-hover);
+}
+
+/* both of these reference the same thing (handle) */
+.slider::-webkit-slider-thumb {
+    cursor: var(--cursor-pointer);
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background-color: var(--slider-handle-color);
+    border: 1px solid var(--slider-handle-border-color);
+    border-radius: var(--slider-handle-border-radius);
+    transition: background-color 0.1s ease-out, border-color 0.1s ease-out;
+}
+.slider::-moz-range-thumb {
+    cursor: var(--cursor-pointer);
+    width: 25px;
+    height: 25px;
+    background-color: var(--slider-handle-color);
+    border: 1px solid var(--slider-handle-border-color);
+    border-radius: var(--slider-handle-border-radius);
+    transition: background-color 0.1s ease-out, border-color 0.1s ease-out;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background-color: var(--slider-handle-color-hover);
+}
+.slider::-moz-range-thumb:hover {
+    background-color: var(--slider-handle-color-hover);
+}
+
+.slider::-webkit-slider-thumb:active {
+    background-color: var(--slider-handle-color-active);
+    border-color: var(--slider-handle-border-color-active);
+}
+.slider::-moz-range-thumb:active {
+    background-color: var(--slider-handle-color-active);
+    border-color: var(--slider-handle-border-color-active);
+}
+
+.slidernum {
+    right: 5%;
+    top: 10px;
+}
+
+.sliderlabel {
+    left: 5%;
+    top: 0px;
+}

@@ -14,6 +14,12 @@ function css_set(v, prop) {
 
 }
 
+// helpful functions
+function whitelistChars(str, whitelist) {
+  let regex = new RegExp(`[^${whitelist}]`, 'g');
+  return str.replace(regex, '');
+}
+
 // common functionalities
 
 function getElem(comp) {
