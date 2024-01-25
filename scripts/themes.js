@@ -65,7 +65,7 @@ class Theme {
             width: 100%;\n
             height: 90%;\n
             font: 16px ${findContainer(vars, '--header-font', true)[1]};\n
-            border-radius: ${findContainer(vars, '--mech-border-radius', true)[1]}\n
+            border-radius: ${findContainer(vars, '--mech-border-radius', true)[1]};\n
             border: 1px solid ${findContainer(vars, '--mech-border-color', true)[1]};\n
             background-color: ${findContainer(vars, '--mech-color', true)[1]};\n
             color: ${findContainer(vars, '--mech-font-color', true)[1]};\n
@@ -80,7 +80,7 @@ class Theme {
             height: 90%;\n
             border-radius: ${findContainer(vars, '--mech-border-radius', true)[1]};\n
             border: 1px solid ${findContainer(vars, '--mech-div-border-color', true)[1]};\n
-            background-color: ${findContainer(vars, '--mech-div-color', true)[1]};\
+            background-color: ${findContainer(vars, '--mech-div-color', true)[1]};\n
             transition: background-color 0.1s ease-out;\n
         }\n
         #${this.id}_container:hover button {\n
@@ -241,5 +241,40 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--panel-color', 'rgb(30, 30, 30)'],
     ['--panel-shadow', '1px 3px 2px rgba(0, 0, 0, 0.5)'],
     ['--panel-border-color', 'rgb(210, 210, 210)'],
+    ['--panel-border-radius', '10px 10px 10px 10px']
+]);
+
+const matrix = new Theme('Matrix', 'matrix', [
+    // background
+    ['--background-color', 'rgb(0, 0, 0)'],
+    ['--title-font', 'Geo'],
+    ['--header-font', 'Courier'],
+    ['--text-font', 'Lato'],
+    // mechanical buttons
+    ['--mech-color', 'rgb(10, 15, 10)'],
+    ['--mech-div-color', 'rgb(5, 10, 5)'],
+    ['--mech-color-hover', 'rgb(10, 90, 10)'],
+    ['--mech-div-color-hover', 'rgb(5, 60, 5)'],
+    ['--mech-color-active', 'rgb(40, 180, 40)'],
+    ['--mech-div-color-active', 'rgb(20, 120, 20)'],
+	['--mech-border-color', 'rgb(10, 220, 10)'],
+	['--mech-div-border-color', 'rgb(10, 150, 10)'],
+    ['--mech-font-color', 'rgb(40, 250, 40)'],
+    ['--mech-font-color-active', 'rgb(0, 0, 0)'],
+    ['--mech-color-sel', 'rgb(40, 180, 40)'],
+    ['--mech-div-color-sel', 'rgb(20, 120, 20)'],
+    ['--mech-color-hover-sel', 'rgb(50, 200, 50)'],
+    ['--mech-div-color-hover-sel', 'rgb(30, 140, 30)'],
+    ['--mech-color-active-sel', 'rgb(30, 160, 30)'],
+    ['--mech-div-color-active-sel', 'rgb(10, 100, 10)'],
+	['--mech-border-color-sel', 'rgb(40, 180, 40)'],
+	['--mech-div-border-color-sel', 'rgb(20, 120, 20)'],
+    ['--mech-font-color-sel', 'rgb(0, 0, 0)'],
+    ['--mech-font-color-active-sel', 'rgb(0, 0, 0)'],
+	['--mech-border-radius', '5px 5px 5px 5px'],
+    // panels
+    ['--panel-color', 'rgb(5, 10, 5)'],
+    ['--panel-shadow', '1px 3px 2px rgba(10, 200, 10, 0.5)'],
+    ['--panel-border-color', 'rgb(10, 210, 10)'],
     ['--panel-border-radius', '10px 10px 10px 10px']
 ]);

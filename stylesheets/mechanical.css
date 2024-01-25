@@ -65,7 +65,7 @@ div.mechcontainer.selected button {
     color: var(--mech-font-color-sel);
     border-color: var(--mech-border-color-sel);
     top: 15%;
-    transition: top 0.1s ease-out, background-color 0.1s ease-out;
+    transition: top 0.1s ease-out, background-color 0.1s ease-out, border-radius 0.1s ease-out;
 }
 
 div.mechcontainer.selected div {
@@ -99,7 +99,7 @@ div.mechcontainer.selected:active div {
 
 span.jigglespan {
     position: relative;
-    font: 16px var(--header-font);
+    font: 16px inherit;
     color: inherit;
     top: 0px;
     transition: top 0.25s ease-out, font-weight 0.25s ease-out, color 0.05s ease-out;
