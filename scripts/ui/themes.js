@@ -206,7 +206,21 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--panel-color', 'rgb(240, 240, 240)'],
     ['--panel-shadow', '1px 3px 2px rgba(0, 0, 0, 0.5)'],
     ['--panel-border-color', 'rgb(10, 10, 10)'],
-    ['--panel-border-radius', '10px 10px 10px 10px']
+    ['--panel-border-radius', '10px 10px 10px 10px'],
+    // tabs
+    ['--navbar-color', 'rgb(230, 230, 230)'],
+    ['--navbar-border-radius', '10px 10px 0px 0px'],
+    ['--navbar-underline-color', 'rgb(50, 150, 200)'],
+    ['--navbar-underline-border-radius', '0px 0px 10px 10px'],
+    ['--navbar-tab-color', 'rgb(230, 230, 230)'],
+    ['--navbar-tab-color-hover', 'rgb(180, 220, 240)'],
+    ['--navbar-tab-color-active', 'rgb(160, 200, 240)'],
+    ['--navbar-tab-color-sel', 'rgb(160, 200, 240)'],
+    ['--navbar-tab-color-hover-sel', 'rgb(170, 210, 250)'],
+    ['--navbar-tab-color-active-sel', 'rgb(150, 190, 230)'],
+    ['--navbar-tab-border', '1px solid rgb(200, 200, 200)'],
+    ['--navbar-tab-font-color', 'rgb(0, 0, 0)'],
+    ['--navbar-tab-font-color-sel', 'rgb(0, 0, 0)']
 ]);
 
 const cool_dark = new Theme('Cool Dark', 'cool_dark', [
@@ -241,7 +255,21 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--panel-color', 'rgb(30, 30, 30)'],
     ['--panel-shadow', '1px 3px 2px rgba(0, 0, 0, 0.5)'],
     ['--panel-border-color', 'rgb(210, 210, 210)'],
-    ['--panel-border-radius', '10px 10px 10px 10px']
+    ['--panel-border-radius', '10px 10px 10px 10px'],
+    // tabs
+    ['--navbar-color', 'rgb(40, 40, 40)'],
+    ['--navbar-border-radius', '10px 10px 0px 0px'],
+    ['--navbar-underline-color', 'rgb(20, 60, 220)'],
+    ['--navbar-underline-border-radius', '0px 0px 10px 10px'],
+    ['--navbar-tab-color', 'rgb(40, 40, 40)'],
+    ['--navbar-tab-color-hover', 'rgb(30, 30, 60)'],
+    ['--navbar-tab-color-active', 'rgb(50, 50, 110)'],
+    ['--navbar-tab-color-sel', 'rgb(50, 50, 110)'],
+    ['--navbar-tab-color-hover-sel', 'rgb(60, 60, 120)'],
+    ['--navbar-tab-color-active-sel', 'rgb(40, 40, 100)'],
+    ['--navbar-tab-border', '1px solid rgb(60, 60, 60)'],
+    ['--navbar-tab-font-color', 'rgb(255, 255, 255)'],
+    ['--navbar-tab-font-color-sel', 'rgb(255, 255, 255)']
 ]);
 
 const matrix = new Theme('Matrix', 'matrix', [
@@ -276,7 +304,21 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--panel-color', 'rgb(5, 10, 5)'],
     ['--panel-shadow', '1px 3px 2px rgba(10, 200, 10, 0.5)'],
     ['--panel-border-color', 'rgb(10, 210, 10)'],
-    ['--panel-border-radius', '10px 10px 10px 10px']
+    ['--panel-border-radius', '5px 5px 5px 5px'],
+    // tabs
+    ['--navbar-color', 'rgb(10, 15, 10)'],
+    ['--navbar-border-radius', '5px 5px 0px 0px'],
+    ['--navbar-underline-color', 'rgb(10, 250, 10)'],
+    ['--navbar-underline-border-radius', '0px 0px 0px 0px'],
+    ['--navbar-tab-color', 'rgb(10, 20, 10)'],
+    ['--navbar-tab-color-hover', 'rgb(10, 60, 10)'],
+    ['--navbar-tab-color-active', 'rgb(20, 120, 20)'],
+    ['--navbar-tab-color-sel', 'rgb(20, 200, 20)'],
+    ['--navbar-tab-color-hover-sel', 'rgb(30, 210, 30)'],
+    ['--navbar-tab-color-active-sel', 'rgb(10, 180, 10)'],
+    ['--navbar-tab-border', '1px solid rgb(50, 220, 50)'],
+    ['--navbar-tab-font-color', 'rgb(20, 200, 20)'],
+    ['--navbar-tab-font-color-sel', 'rgb(0, 0, 0)']
 ]);
 
 // load the theme

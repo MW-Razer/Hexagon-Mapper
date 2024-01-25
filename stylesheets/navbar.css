@@ -1,0 +1,65 @@
+/* tab navbars at the top of panels */
+
+div.navbar {
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    background-color: var(--navbar-color);
+    border-radius: var(--navbar-border-radius);
+    overflow: hidden;
+}
+
+div.navbar div {
+    position: absolute;
+    height: 5px;
+    top: 40px;
+    background-color: var(--navbar-underline-color);
+    border-radius: var(--navbar-underline-border-radius);
+    transition: left 0.1s ease-out;
+}
+
+div.tab {
+    background-color: inherit;
+    border: 1px solid inherit;
+    border-radius: inherit;
+    width: 100%;
+    height: calc(100% - 45px);
+    top: 45px;
+    transition: visibility 0.1s ease-out, opacity 0.1s ease-out, top 0.1s ease-out, left 0.1s ease-out;
+}
+
+div.navbar button {
+    position: absolute;
+    cursor: var(--cursor-pointer);
+    top: 0px;
+    height: 40px;
+    font: 16px var(--header-font);
+    color: var(--navbar-tab-font-color);
+    background-color: var(--navbar-tab-color);
+    border-top: none;
+    border-bottom: none;
+    border-left: var(--navbar-tab-border);
+    border-right: var(--navbar-tab-border);
+    transition: background-color 0.1s ease-out, color 0.1s ease-out;
+}
+
+div.navbar button:hover {
+    background-color: var(--navbar-tab-color-hover);
+}
+
+div.navbar button:active {
+    background-color: var(--navbar-tab-color-active);
+}
+
+div.navbar button.selected {
+    background-color: var(--navbar-tab-color-sel);
+    color: var(--navbar-tab-font-color-sel);
+}
+
+div.navbar button.selected:hover {
+    background-color: var(--navbar-tab-color-hover-sel);
+}
+
+div.navbar button.selected:active {
+    background-color: var(--navbar-tab-color-active-sel);
+}

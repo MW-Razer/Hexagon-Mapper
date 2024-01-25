@@ -50,6 +50,22 @@
     --panel-shadow: 1px 3px 2px rgba(0, 0, 0, 0.5);
     --panel-border-color: rgb(10, 10, 10);
     --panel-border-radius: 10px 10px 10px 10px;
+
+    /* tabs */
+    --navbar-color: rgb(230, 230, 230);
+    --navbar-border-radius: 10px 10px 0px 0px;
+    --navbar-underline-color: rgb(50, 150, 200);
+    --navbar-underline-border-radius: 0px 0px 10px 10px;
+    --navbar-tab-color: rgb(230, 230, 230);
+    --navbar-tab-color-hover: rgb(180, 220, 240);
+    --navbar-tab-color-active: rgb(160, 200, 240);
+    --navbar-tab-color-sel: rgb(160, 200, 240);
+    --navbar-tab-color-hover-sel: rgb(170, 210, 250);
+    --navbar-tab-color-active-sel: rgb(150, 190, 230);
+    --navbar-tab-border: 1px solid rgb(200, 200, 200);
+    --navbar-tab-font-color: rgb(0, 0, 0);
+    --navbar-tab-font-color-sel: rgb(0, 0, 0);
+
 }
 
 html, body {
@@ -64,4 +80,10 @@ html, body {
 .hidden {
     visibility: hidden;
     opacity: 0;
+}
+
+button {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }

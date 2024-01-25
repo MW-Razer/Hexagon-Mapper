@@ -52,6 +52,24 @@ function toggleVis(elem) {
 
 }
 
+// shows elem, hides group
+function showGroup(elem, group) {
+
+  if (typeof group === "string") {
+    group = document.getElementsByClassName(group);
+  }
+
+  elem = getElem(elem);
+
+  for (let i = 0; i < group.length; i++) {
+    hide(group[i]);
+  }
+
+  show(elem);
+
+}
+
+
 function sel(elem) {
 
   elem = getElem(elem);

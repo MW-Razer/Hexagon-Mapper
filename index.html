@@ -10,43 +10,61 @@
     <link href="stylesheets/root.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/mechanical.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/panel.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/navbar.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body>
 
+    <!-- these scripts are for easy-ui elems -->
+	<script src="scripts/htmlFuncs.js"></script>
+	<script src="scripts/ui/navbar.js"></script>
+
 	<div id="canvasDiv">
 		
 	</div>
 
-    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: 50%; left: calc(50% - 200px);" onclick="toggleGroup(this, 'titlebutton');">
+    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: 50%; left: calc(50% - 100px);" onclick="toggleGroup(this, 'titlebutton');">
         <div class="jigglediv"></div>
-        <button class="jigglebutton">New Map</button>
+        <button class="jigglebutton">Maps</button>
     </div>
 
-    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 60px); left: calc(50% - 200px);" onclick="toggleGroup(this, 'titlebutton');">
-        <div class="jigglediv"></div>
-        <button class="jigglebutton">Load Map</button>
-    </div>
-
-    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 120px); left: calc(50% - 200px);" onclick="toggleGroup(this, 'titlebutton');">
+    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 60px); left: calc(50% - 100px);" onclick="toggleGroup(this, 'titlebutton'); toggleVis('optionsDiv'); toggleMove('optionsDiv', ['calc(50% - 510px)', 'calc(50% - 250px)'], ['calc(50% - 560px)', 'calc(50% - 250px)']);">
         <div class="jigglediv"></div>
         <button class="jigglebutton">Options</button>
     </div>
 
-    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 180px); left: calc(50% - 200px);" onclick="toggleGroup(this, 'titlebutton'); toggleVis('themesDiv'); toggleMove('themesDiv', ['calc(50% + 110px)', 'calc(50% - 250px)'], ['calc(50% + 160px)', 'calc(50% - 250px)']);">
+    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 120px); left: calc(50% - 100px);" onclick="toggleGroup(this, 'titlebutton'); toggleVis('themesDiv'); toggleMove('themesDiv', ['calc(50% + 110px)', 'calc(50% - 250px)'], ['calc(50% + 160px)', 'calc(50% - 250px)']);">
         <div class="jigglediv"></div>
         <button class="jigglebutton">Themes</button>
+    </div>
+
+    <div class="panel hidden" id="optionsDiv" style="width: 400px; height: 500px; left: calc(50% - 560px); top: calc(50% - 250px);">
+        <div class="navbar" id="optionsDivNavbar">
+            <script>appendNavbar('optionsDivNavbar', '455px', ['Controls', 'Visual', 'Audio']);</script>
+        </div>
+
+        <div class="tab optionsDivTab" id="optionsDivControls">
+            <button>controls</button>
+        </div>
+
+        <div class="tab optionsDivTab hidden" id="optionsDivVisual">
+            <button>graphics</button>
+        </div>
+
+        <div class="tab optionsDivTab hidden" id="optionsDivAudio">
+            <button>sound</button>
+        </div>
+
     </div>
 
     <div class="panel hidden" id="themesDiv" style="width: 300px; height: 500px; left: calc(50% + 160px); top: calc(50% - 250px);">
 
     </div>
     
-    <script src="scripts/button_text_jiggler.js"></script>
+    <script src="scripts/ui/button_text_jiggler.js"></script>
 	<script src="scripts/gameFuncs.js"></script>
-	<script src="scripts/htmlFuncs.js"></script>
-	<script src="scripts/themes.js"></script>
+	<script src="scripts/ui/themes.js"></script>
 	<script src="scripts/draw.js"></script>
 	
 </body>
