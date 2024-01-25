@@ -143,6 +143,8 @@ class Theme {
 
             themes[themeCount].set();
 
+            localStorage.setItem('theme', id);
+
         };
 
         b.innerHTML = `${name}`;
@@ -206,8 +208,6 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--panel-border-color', 'rgb(10, 10, 10)'],
     ['--panel-border-radius', '10px 10px 10px 10px']
 ]);
-
-document.getElementById('cool_light_container').click();
 
 const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     // background
@@ -278,3 +278,21 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--panel-border-color', 'rgb(10, 210, 10)'],
     ['--panel-border-radius', '10px 10px 10px 10px']
 ]);
+
+// load the theme
+let storedTheme = localStorage.getItem('theme');
+
+if (storedTheme == null || storedTheme == undefined) {
+
+    storedTheme = 'cool_light';
+
+}
+
+for (let i = 0; i < themes.length; i++) {
+
+    if (themes[i].id == storedTheme) {
+        document.getElementById(`${themes[i].id}_button`).click();
+        break;
+    }
+
+}
