@@ -20,7 +20,7 @@ div.mechcontainer button {
     border: 1px solid var(--mech-border-color);
     background: var(--mech-color);
     color: var(--mech-font-color);
-    transition: top 0.1s ease-out, background 0.1s ease-out, color 0.05s ease-out;
+    transition: top 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out, color 0.05s ease-out;
 }
 
 div.mechcontainer div {
@@ -33,30 +33,30 @@ div.mechcontainer div {
     border-radius: var(--mech-border-radius);
     border: 1px solid var(--mech-div-border-color);
     background: var(--mech-div-color);
-    transition: background 0.1s ease-out;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out;
 }
 
 div.mechcontainer:hover button {
     background: var(--mech-color-hover);
     top: 0%;
-    transition: top 0.1s ease-out, background 0.1s ease-out;
+    transition: top 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;
 }
 
 div.mechcontainer:hover div {
     background: var(--mech-div-color-hover);
-    transition: background 0.1s ease-out;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out;
 }
 
 div.mechcontainer:active button {
     background: var(--mech-color-active);
     color: var(--mech-font-color-active);
     top: 15%;
-    transition: top 0.05s ease-out, background 0.05s ease-out;
+    transition: top 0.05s ease-out, background-color 0.05s ease-out, background-image 0.1s ease-out;
 }
 
 div.mechcontainer:active div {
     background: var(--mech-div-color-active);
-    transition: background 0.05s ease-out;
+    transition: background-color 0.05s ease-out, background-image 0.1s ease-out;
 }
 
 /* when toggled on */
@@ -65,36 +65,36 @@ div.mechcontainer.selected button {
     color: var(--mech-font-color-sel);
     border-color: var(--mech-border-color-sel);
     top: 15%;
-    transition: top 0.1s ease-out, background 0.1s ease-out, border-radius 0.1s ease-out;
+    transition: top 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out, border-radius 0.1s ease-out;
 }
 
 div.mechcontainer.selected div {
     background: var(--mech-div-color-sel);
     border-color: var(--mech-div-border-color-sel);
-    transition: background 0.1s ease-out;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out;
 }
 
 div.mechcontainer.selected:hover button {
     background: var(--mech-color-hover-sel);
     top: 12.5%;
-    transition: top 0.1s ease-out, background 0.1s ease-out;
+    transition: top 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;
 }
 
 div.mechcontainer.selected:hover div {
     background: var(--mech-div-color-hover-sel);
-    transition: background 0.1s ease-out;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out;
 }
 
 div.mechcontainer.selected:active button {
     background: var(--mech-color-active-sel);
     color: var(--mech-font-color-active-sel);
     top: 17.5%;
-    transition: top 0.05s ease-out, background 0.05s ease-out;
+    transition: top 0.05s ease-out, background-color 0.05s ease-out, background-image 0.1s ease-out;
 }
 
 div.mechcontainer.selected:active div {
     background: var(--mech-div-color-active-sel);
-    transition: background 0.05s ease-out;
+    transition: background-color 0.05s ease-out, background-image 0.1s ease-out;
 }
 
 span.jigglespan {

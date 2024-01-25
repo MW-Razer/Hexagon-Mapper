@@ -4,7 +4,7 @@
     position: absolute;
     height: 100px;
     background: var(--slider-div-color);
-    transition: background 0.2s ease-out;
+    transition: background-color 0.2s ease-out, background-image 0.1s ease-out;
 }
 
 .slidercontainer:hover {
@@ -26,7 +26,7 @@
     background: var(--slider-color);
     border: 1px solid var(--slider-border-color);
     border-radius: var(--slider-border-radius);
-    transition: background 0.1s ease-out, border-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out, border-color 0.1s ease-out;
 }
 
 .slider:hover {
@@ -44,7 +44,7 @@
     background: var(--slider-handle-color);
     border: 1px solid var(--slider-handle-border-color);
     border-radius: var(--slider-handle-border-radius);
-    transition: background 0.1s ease-out, border-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out, border-color 0.1s ease-out;
 }
 .slider::-moz-range-thumb {
     cursor: var(--cursor-pointer);
@@ -53,7 +53,7 @@
     background: var(--slider-handle-color);
     border: 1px solid var(--slider-handle-border-color);
     border-radius: var(--slider-handle-border-radius);
-    transition: background 0.1s ease-out, border-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out, border-color 0.1s ease-out;
 }
 
 .slider::-webkit-slider-thumb:hover {

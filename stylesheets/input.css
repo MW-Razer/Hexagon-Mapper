@@ -9,7 +9,7 @@ input {
     color: var(--text-color);
     border: 1px solid var(--input-border-color);
     border-radius: var(--input-border-radius);
-    transition: background 0.1s ease-out, color 0.1s ease-out, border-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out, color 0.1s ease-out, border-color 0.1s ease-out;
 }
 
 input:hover {
