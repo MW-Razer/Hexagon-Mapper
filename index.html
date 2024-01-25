@@ -24,17 +24,17 @@
 		
 	</div>
 
-    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: 50%; left: calc(50% - 100px);" onclick="toggleGroup(this, 'titlebutton');">
+    <div class="mechcontainer titlebutton" id="mapsButton" style="width: 200px; height: 50px; top: 50%; left: calc(50% - 100px);" onclick="toggleGroup(this, 'titlebutton');">
         <div class="jigglediv"></div>
         <button class="jigglebutton">Maps</button>
     </div>
 
-    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 60px); left: calc(50% - 100px);" onclick="toggleGroup(this, 'titlebutton'); toggleVis('optionsDiv'); toggleMove('optionsDiv', ['calc(50% - 510px)', 'calc(50% - 250px)'], ['calc(50% - 560px)', 'calc(50% - 250px)']);">
+    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 60px); left: calc(50% - 100px);" onclick="deactive('mapsButton'); toggleSel(this); toggleVis('optionsDiv'); toggleMove('optionsDiv', ['calc(50% - 510px)', 'calc(50% - 250px)'], ['calc(50% - 560px)', 'calc(50% - 250px)']);">
         <div class="jigglediv"></div>
         <button class="jigglebutton">Options</button>
     </div>
 
-    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 120px); left: calc(50% - 100px);" onclick="toggleGroup(this, 'titlebutton'); toggleVis('themesDiv'); toggleMove('themesDiv', ['calc(50% + 110px)', 'calc(50% - 250px)'], ['calc(50% + 160px)', 'calc(50% - 250px)']);">
+    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 120px); left: calc(50% - 100px);" onclick="deactive('mapsButton'); toggleSel(this); toggleVis('themesDiv'); toggleMove('themesDiv', ['calc(50% + 110px)', 'calc(50% - 250px)'], ['calc(50% + 160px)', 'calc(50% - 250px)']);">
         <div class="jigglediv"></div>
         <button class="jigglebutton">Themes</button>
     </div>

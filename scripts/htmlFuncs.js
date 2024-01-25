@@ -111,7 +111,6 @@ function selGroup(elem, group) {
     if (group[i].classList.contains('selected') && group[i] != elem) {
       group[i].click();
       desel(group[i]);
-      break;
     }
   }
 
@@ -131,7 +130,6 @@ function deselGroup(elem, group) {
     if (group[i].classList.contains('selected') && group[i] != elem) {
       group[i].click();
       desel(group[i]);
-      break;
     }
   }
 
@@ -145,6 +143,28 @@ function toggleGroup(elem, group) {
     deselGroup(elem, group);
   } else {
     selGroup(elem, group);
+  }
+
+}
+
+// if not selected, click elem
+function active(elem) {
+
+  elem = getElem(elem);
+
+  if (!elem.classList.contains('selected')) {
+    elem.click();
+  }
+
+}
+
+// if selected, click elem
+function deactive(elem) {
+
+  elem = getElem(elem);
+
+  if (elem.classList.contains('selected')) {
+    elem.click();
   }
 
 }
