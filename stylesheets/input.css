@@ -9,14 +9,14 @@ input {
     color: var(--text-color);
     border: 1px solid var(--input-border-color);
     border-radius: var(--input-border-radius);
-    transition: background-color 0.1s ease-out, color 0.1s ease-out, border-color 0.1s ease-out;
+    transition: background 0.1s ease-out, color 0.1s ease-out, border-color 0.1s ease-out;
 }
 
 input:hover {
-    background-color: var(--input-color-hover);
+    background: var(--input-color-hover);
 }
 
 input:active {
-    background-color: var(--input-color-active);
+    background: var(--input-color-active);
     color: var(--input-font-color-active);
 }

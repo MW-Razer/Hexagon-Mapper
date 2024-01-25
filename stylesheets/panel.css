@@ -5,7 +5,7 @@ div {
 }
 
 div.panel {
-    background-color: var(--panel-color);
+    background: var(--panel-color);
     box-shadow: var(--panel-shadow);
     border: 1px solid var(--panel-border-color);
     border-radius: var(--panel-border-radius);
