@@ -139,9 +139,9 @@ class Theme {
 
         bc.onclick = function() {
 
-            themes[themeCount].set();
-
             selGroup(this, document.getElementById('themesDiv').children);
+
+            themes[themeCount].set();
 
         };
 

@@ -17,57 +17,146 @@ function css_set(v, prop) {
 // common functionalities
 
 function getElem(comp) {
+
   return typeof comp === "string" ? document.getElementById(comp) : comp;
+
 }
 
 function hide(elem) {
+
   elem = getElem(elem);
+
   elem.classList.add('hidden');
   elem.style.opacity = 0;
+
 }
 
 function show(elem) {
+
   elem = getElem(elem);
+
   elem.classList.remove('hidden');
   elem.style.opacity = 1;
+
 }
 
 function toggleVis(elem) {
+
   elem = getElem(elem);
+
   if (elem.classList.contains('hidden')) {
     show(elem);
   } else {
     hide(elem);
   }
+
 }
 
 function sel(elem) {
+
   elem = getElem(elem);
+
   elem.classList.add('selected');
+
 }
 
 function desel(elem) {
+
   elem = getElem(elem);
+
   elem.classList.remove('selected');
+
 }
 
 function toggleSel(elem) {
+
   elem = getElem(elem);
+
   if (elem.classList.contains('selected')) {
     desel(elem);
   } else {
     sel(elem);
   }
+
 }
 
-// selects elem, desels all in group
+// selects elem, desels all in group (class name if string)
 function selGroup(elem, group) {
 
+  if (typeof group === "string") {
+    group = document.getElementsByClassName(group);
+  }
+
+  elem = getElem(elem);
+
   for (let i = 0; i < group.length; i++) {
-    desel(group[i]);
+    if (group[i].classList.contains('selected') && group[i] != elem) {
+      group[i].click();
+      desel(group[i]);
+      break;
+    }
   }
 
   sel(elem);
+
+}
+
+function deselGroup(elem, group) {
+
+  if (typeof group === "string") {
+    group = document.getElementsByClassName(group);
+  }
+
+  elem = getElem(elem);
+
+  for (let i = 0; i < group.length; i++) {
+    if (group[i].classList.contains('selected') && group[i] != elem) {
+      group[i].click();
+      desel(group[i]);
+      break;
+    }
+  }
+
+  desel(elem);
+
+}
+
+function toggleGroup(elem, group) {
+
+  if (elem.classList.contains('selected')) {
+    deselGroup(elem, group);
+  } else {
+    selGroup(elem, group);
+  }
+
+}
+
+// moves elem to (x, y) pos based on top and left styles
+function move(elem, pos) {
+
+  elem = getElem(elem);
+
+  elem.style.left = pos[0];
+  elem.style.top = pos[1];
+
+}
+
+// reverts elem to pos 2 if pos 1 is the same as current pos
+function toggleMove(elem, p1, p2) {
+
+  elem = getElem(elem);
+
+  if (p1[0] == elem.style.left && p1[1] == elem.style.top) {
+
+    elem.style.left = p2[0];
+    elem.style.top = p2[1];
+
+  } else {
+
+    elem.style.left = p1[0];
+    elem.style.top = p1[1];
+
+  }
 
 }
 
