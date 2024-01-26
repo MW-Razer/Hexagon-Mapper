@@ -8,12 +8,15 @@
     <title>HMG</title>
 
     <link href="stylesheets/root.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/scrollbar.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/text.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/input.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/mechanical.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/panel.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/navbar.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/slider.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/dropdown.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/switch.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -23,6 +26,8 @@
 	<script src="scripts/htmlFuncs.js"></script>
 	<script src="scripts/ui/navbar.js"></script>
 	<script src="scripts/ui/slider.js"></script>
+	<script src="scripts/ui/dropdown.js"></script>
+	<script src="scripts/ui/switch.js"></script>
 
 	<div id="canvasDiv">
 		
@@ -67,6 +72,8 @@
 
         <div class="tab optionsDivTab" id="optionsDivControls">
             <script>appendSliderNum('optionsDivControls', ['0px', '0px'], ['100%', '100px'], 'Testing Number:', [0, 100], 69, (e) => { return; });</script>
+            <script>appendDropdown('optionsDivControls', ['0px', '100px'], ['100%', '50px'], 'Testing Dropdown:', ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'], (e) => { return; });</script>
+            <script>appendSliderNum('optionsDivControls', ['0px', '900px'], ['100%', '100px'], 'Testing Number 2:', [0, 100], 69, (e) => { return; });</script>
         </div>
 
         <div class="tab optionsDivTab hidden" id="optionsDivVisual">
@@ -87,6 +94,7 @@
     <script src="scripts/ui/button_text_jiggler.js"></script>
 	<script src="scripts/gameFuncs.js"></script>
 	<script src="scripts/ui/themes.js"></script>
+	<script src="scripts/documentListeners.js"></script>
 	<script src="scripts/draw.js"></script>
 	
 </body>

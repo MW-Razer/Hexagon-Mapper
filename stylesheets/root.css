@@ -24,6 +24,19 @@
     --text-color-light: rgb(50, 50, 50);
     --cursor-pointer: pointer;
 
+    /* compound elem backgrounds */
+    --compound-backgound-color: rgb(240, 240, 240);
+    --compound-backgound-color-hover: rgb(230, 230, 230);
+    --compound-backgound-color-active: rgb(220, 220, 220);
+
+    /* scrollbar */
+    --scrollbar-color: rgb(200, 200, 200);
+    --scrollbar-border-radius: 0px 10px 10px 0px;
+    --scrollbar-thumb-color: rgb(150, 150, 150);
+    --scrollbar-thumb-color-hover: rgb(100, 120, 140);
+    --scrollbar-thumb-color-active: rgb(70, 90, 120);
+    --scrollbar-thumb-border-radius: 5px 5px 5px 5px;
+
     /* inputs */
     --input-border-radius: 10px 10px 10px 10px;
     --input-border-color: rgb(10, 10, 10);
@@ -77,9 +90,6 @@
     --navbar-tab-font-color-sel: rgb(0, 0, 0);
 
     /* sliders */
-    --slider-div-color: rgb(240, 240, 240);
-    --slider-div-color-hover: rgb(230, 230, 230);
-    --slider-div-color-active: rgb(220, 220, 220);
     --slider-color: rgb(200, 200, 200);
     --slider-color-hover: rgb(180, 180, 180);
     --slider-border-color: rgb(200, 200, 200);
@@ -91,6 +101,20 @@
     --slider-handle-color-active: rgb(210, 210, 210);
     --slider-handle-border-color-active: rgb(10, 10, 10);
     --slider-handle-border-radius: 12.5px 12.5px 12.5px 12.5px;
+
+    /* switches */
+    --switch-color: rgb(200, 200, 200);
+    --switch-color-on: rgb(100, 150, 200);
+    --switch-border-color: rgb(180, 180, 180);
+    --switch-handle-border-radius: 5px 5px 5px 5px;
+    --switch-handle-color: rgb(250, 250, 250);
+    --switch-handle-border-color: rgb(250, 250, 250);
+    --switch-handle-color-on: rgb(250, 250, 250);
+    --switch-handle-border-color-on: rgb(250, 250, 250);
+    --switch-handle-div-color: rgb(220, 220, 220);
+    --switch-handle-div-border-color: rgb(220, 220, 220);
+    --switch-handle-div-color-on: rgb(220, 220, 220);
+    --switch-handle-div-border-color-on: rgb(220, 220, 220);
 
 }
 

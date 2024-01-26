@@ -122,3 +122,5 @@ function addAllJiggle() {
     }
     
 }
+
+addAllJiggle();

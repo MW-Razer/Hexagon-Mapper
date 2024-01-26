@@ -5,6 +5,7 @@ function appendNavbar(navbar, tabHeight, options = []) {
     navbar = getElem(navbar);
 
     let div = navbar.parentElement;
+    div.style.overflowY = 'hidden';
 
     let d = document.createElement('div');
 
@@ -53,6 +54,7 @@ function appendNavbar(navbar, tabHeight, options = []) {
         
         if (i == 0) {
             b.classList.add('selected');
+            b.click();
         }
 
     }

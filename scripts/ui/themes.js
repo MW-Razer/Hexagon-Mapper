@@ -194,6 +194,17 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--text-font', 'Lato'],
     ['--text-color', 'rgb(0, 0, 0)'],
     ['--text-color-light', 'rgb(50, 50, 50)'],
+    // backgrounds for compound ui elems
+    ['--compound-background-color', 'rgb(240, 240, 240)'],
+    ['--compound-background-color-hover', 'rgb(230, 230, 230)'],
+    ['--compound-background-color-active', 'rgb(220, 220, 220)'],
+    // scrollbars
+    ['--scrollbar-color', 'rgb(200, 200, 200)'],
+    ['--scrollbar-border-radius', '0px 10px 10px 0px'],
+    ['--scrollbar-thumb-color', 'rgb(150, 150, 150)'],
+    ['--scrollbar-thumb-color-hover', 'rgb(100, 120, 140)'],
+    ['--scrollbar-thumb-color-active', 'rgb(70, 90, 120)'],
+    ['--scrollbar-thumb-border-radius', '5px 5px 5px 5px'],
     // inputs
     ['--input-border-radius', '10px 10px 10px 10px'],
     ['--input-border-color', 'rgb(10, 10, 10)'],
@@ -243,9 +254,6 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--navbar-tab-font-color', 'rgb(0, 0, 0)'],
     ['--navbar-tab-font-color-sel', 'rgb(0, 0, 0)'],
     // sliders
-    ['--slider-div-color', 'rgb(240, 240, 240)'],
-    ['--slider-div-color-hover', 'rgb(230, 230, 230)'],
-    ['--slider-div-color-active', 'rgb(220, 220, 220)'],
     ['--slider-color', 'rgb(200, 200, 200)'],
     ['--slider-color-hover', 'rgb(180, 180, 180)'],
     ['--slider-border-color', 'rgb(200, 200, 200)'],
@@ -257,6 +265,8 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--slider-handle-color-active', 'rgb(210, 210, 210)'],
     ['--slider-handle-border-color-active', 'rgb(10, 10, 10)'],
     ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px']
+    // switches
+    
 ]);
 
 const cool_dark = new Theme('Cool Dark', 'cool_dark', [
@@ -267,6 +277,17 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--text-font', 'Lato'],
     ['--text-color', 'rgb(255, 255, 255)'],
     ['--text-color-light', 'rgb(200, 200, 200)'],
+    // backgrounds for compound ui elems
+    ['--compound-background-color', 'rgb(30, 30, 30)'],
+    ['--compound-background-color-hover', 'rgb(30, 30, 40)'],
+    ['--compound-background-color-active', 'rgb(30, 30, 60)'],
+    // scrollbars
+    ['--scrollbar-color', 'rgb(80, 80, 80)'],
+    ['--scrollbar-border-radius', '0px 10px 10px 0px'],
+    ['--scrollbar-thumb-color', 'rgb(130, 130, 130)'],
+    ['--scrollbar-thumb-color-hover', 'rgb(150, 160, 180)'],
+    ['--scrollbar-thumb-color-active', 'rgb(100, 120, 180)'],
+    ['--scrollbar-thumb-border-radius', '5px 5px 5px 5px'],
     // inputs
     ['--input-border-radius', '10px 10px 10px 10px'],
     ['--input-border-color', 'rgb(210, 210, 210)'],
@@ -316,9 +337,6 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--navbar-tab-font-color', 'rgb(255, 255, 255)'],
     ['--navbar-tab-font-color-sel', 'rgb(255, 255, 255)'],
     // sliders
-    ['--slider-div-color', 'rgb(30, 30, 30)'],
-    ['--slider-div-color-hover', 'rgb(30, 30, 40)'],
-    ['--slider-div-color-active', 'rgb(30, 30, 60)'],
     ['--slider-color', 'rgb(70, 70, 70)'],
     ['--slider-color-hover', 'rgb(70, 70, 100)'],
     ['--slider-border-color', 'rgb(70, 70, 70)'],
@@ -340,6 +358,17 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--text-font', 'Lato'],
     ['--text-color', 'rgb(10, 240, 10)'],
     ['--text-color-light', 'rgb(70, 250, 70)'],
+    // backgrounds for compound ui elems
+    ['--compound-background-color', 'rgb(5, 10, 5)'],
+    ['--compound-background-color-hover', 'rgb(5, 20, 5)'],
+    ['--compound-background-color-active', 'rgb(10, 30, 10)'],
+    // scrollbars
+    ['--scrollbar-color', 'rgb(20, 30, 20)'],
+    ['--scrollbar-border-radius', '0px 5px 5px 0px'],
+    ['--scrollbar-thumb-color', 'rgb(40, 160, 40)'],
+    ['--scrollbar-thumb-color-hover', 'rgb(60, 190, 60)'],
+    ['--scrollbar-thumb-color-active', 'rgb(50, 130, 50)'],
+    ['--scrollbar-thumb-border-radius', '2px 2px 2px 2px'],
     // inputs
     ['--input-border-radius', '5px 5px 5px 5px'],
     ['--input-border-color', 'rgb(10, 220, 10)'],
@@ -389,9 +418,6 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--navbar-tab-font-color', 'rgb(20, 200, 20)'],
     ['--navbar-tab-font-color-sel', 'rgb(0, 0, 0)'],
     // sliders
-    ['--slider-div-color', 'rgb(5, 10, 5)'],
-    ['--slider-div-color-hover', 'rgb(5, 20, 5)'],
-    ['--slider-div-color-active', 'rgb(10, 30, 10)'],
     ['--slider-color', 'rgb(5, 10, 5)'],
     ['--slider-color-hover', 'rgb(5, 10, 5)'],
     ['--slider-border-color', 'rgb(20, 150, 20)'],
@@ -413,13 +439,24 @@ const blood_moon = new Theme('Blood Moon', 'blood_moon', [
     ['--text-font', 'Lato'],
     ['--text-color', 'rgb(255, 240, 240)'],
     ['--text-color-light', 'rgb(255, 210, 210)'],
+    // backgrounds for compound ui elems
+    ['--compound-background-color', 'rgba(10, 5, 5, 0.5)'],
+    ['--compound-background-color-hover', 'rgba(20, 5, 5, 0.5)'],
+    ['--compound-background-color-active', 'rgba(30, 10, 10, 0.5)'],
+    // scrollbars
+    ['--scrollbar-color', 'linear-gradient(0deg, rgba(50,20,20,1) 0%, rgba(20,5,5,1) 100%)'],
+    ['--scrollbar-border-radius', '0px 5px 10px 0px'],
+    ['--scrollbar-thumb-color', 'rgb(150, 30, 30)'],
+    ['--scrollbar-thumb-color-hover', 'rgb(180, 40, 40)'],
+    ['--scrollbar-thumb-color-active', 'rgb(120, 10, 10)'],
+    ['--scrollbar-thumb-border-radius', '5px 5px 5px 5px'],
     // inputs
     ['--input-border-radius', '5px 5px 10px 5px'],
     ['--input-border-color', 'rgb(220, 10, 10)'],
     ['--input-color', 'rgb(10, 5, 5)'],
     ['--input-color-hover', 'rgb(15, 10, 10)'],
     ['--input-color-active', 'rgb(40, 20, 20)'],
-    ['--input-font-color-active', 'rgb(70, 250, 70)'],
+    ['--input-font-color-active', 'rgb(250, 150, 150)'],
     // mechanical buttons
     ['--mech-color', 'linear-gradient(90deg, rgba(200,10,10,1) 0%, rgba(80,20,20,1) 40%, rgba(20,10,10,1) 100%)'],
     ['--mech-div-color', 'linear-gradient(90deg, rgba(150,10,10,1) 0%, rgba(50,10,10,1) 40%, rgba(10,5,5,1) 100%)'],
@@ -462,9 +499,6 @@ const blood_moon = new Theme('Blood Moon', 'blood_moon', [
     ['--navbar-tab-font-color', 'rgb(255, 240, 240)'],
     ['--navbar-tab-font-color-sel', 'rgb(0, 0, 0)'],
     // sliders
-    ['--slider-div-color', 'rgba(10, 5, 5, 0.5)'],
-    ['--slider-div-color-hover', 'rgba(20, 5, 5, 0.5)'],
-    ['--slider-div-color-active', 'rgba(30, 10, 10, 0.5)'],
     ['--slider-color', 'linear-gradient(90deg, rgba(100,10,10,1) 0%, rgba(50,5,5,1) 100%)'],
     ['--slider-color-hover', 'linear-gradient(90deg, rgba(120,15,15,1) 0%, rgba(70,15,15,1) 100%)'],
     ['--slider-border-color', 'rgba(150, 20, 20, 0)'],
@@ -477,6 +511,17 @@ const blood_moon = new Theme('Blood Moon', 'blood_moon', [
     ['--slider-handle-border-color-active', 'rgb(180, 20, 20)'],
     ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px']
 ]);
+
+/*
+const test0 = new Theme('test0', 'test_0', [['--background-color', '#ff00ff']]);
+const test1 = new Theme('test1', 'test_1', [['--background-color', '#ff00ff']]);
+const test2 = new Theme('test2', 'test_2', [['--background-color', '#ff00ff']]);
+const test3 = new Theme('test3', 'test_3', [['--background-color', '#ff00ff']]);
+const test4 = new Theme('test4', 'test_4', [['--background-color', '#ff00ff']]);
+const test5 = new Theme('test5', 'test_5', [['--background-color', '#ff00ff']]);
+const test6 = new Theme('test6', 'test_6', [['--background-color', '#ff00ff']]);
+const test7 = new Theme('test7', 'test_7', [['--background-color', '#ff00ff']]);
+*/
 
 // load the theme
 let storedTheme = localStorage.getItem('theme');

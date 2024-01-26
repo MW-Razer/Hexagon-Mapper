@@ -25,6 +25,7 @@ div.tab {
     width: 100%;
     height: calc(100% - 45px);
     top: 45px;
+    overflow-y: auto;
     transition: visibility 0.1s ease-out, opacity 0.1s ease-out, top 0.1s ease-out, left 0.1s ease-out;
 }
 

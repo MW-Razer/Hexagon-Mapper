@@ -1,0 +1,28 @@
+/* custom scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-corner {
+    visibility: hidden;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-color);
+    border-radius: var(--scrollbar-border-radius);
+}
+  
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: var(--scrollbar-thumb-border-radius);
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-color-hover);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--scrollbar-thumb-color-active);
+}

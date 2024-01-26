@@ -1,0 +1,80 @@
+/* custom dropdowns */
+
+.dropdowncontainer {
+    position: absolute;
+    background: var(--compound-background-color);
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out;
+}
+
+.dropdowncontainer:hover {
+    background: var(--compound-background-color-hover);
+}
+
+.dropdowncontainer:active {
+    background: var(--compound-background-color-active);
+}
+
+.dropdown {
+    position: absolute;
+    right: 5%;
+    top: 10px;
+    background: var(--input-color);
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--input-border-radius);
+    font: 16px var(--text-font);
+    color: var(--text-color);
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out, border-color 0.1s ease-out, color 0.1s ease-out;
+}
+
+.dropdown:hover {
+    background: var(--input-color-hover);
+}
+
+.dropdown:active {
+    background: var(--input-color-active);
+    color: var(--input-font-color-active);
+}
+
+.dropdowndiv {
+    position: absolute;
+    right: 5%;
+    top: 40px;
+    height: 90px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--input-border-radius);
+    box-shadow: var(--panel-shadow);
+    transition: height 0.1s ease-out, opacity 0.1s ease-out, visibility 0.1s ease-out;
+}
+
+.dropdowndiv.closed {
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dropdownoption {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    background: var(--input-color);
+    font: 16px var(--text-font);
+    color: var(--text-color);
+    border: none;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out, color 0.1s ease-out;
+}
+
+.dropdownoption:hover {
+    background: var(--input-color-hover);
+}
+
+.dropdownoption:active {
+    background: var(--input-color-active);
+    color: var(--input-font-color-active);
+}
+
+.dropdowncontainer p {
+    position: absolute;
+    left: 5%;
+}

@@ -3,16 +3,16 @@
 .slidercontainer {
     position: absolute;
     height: 100px;
-    background: var(--slider-div-color);
+    background: var(--compound-background-color);
     transition: background-color 0.2s ease-out, background-image 0.1s ease-out;
 }
 
 .slidercontainer:hover {
-    background: var(--slider-div-color-hover);
+    background: var(--compound-background-color-hover);
 }
 
 .slidercontainer:active {
-    background: var(--slider-div-color-active);
+    background: var(--compound-background-color-active);
 }
 
 .slider {
