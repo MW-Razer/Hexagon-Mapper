@@ -71,9 +71,22 @@
         </div>
 
         <div class="tab optionsDivTab" id="optionsDivControls">
-            <script>appendSliderNum('optionsDivControls', ['0px', '0px'], ['100%', '100px'], 'Testing Number:', [0, 100], 69, (e) => { return; });</script>
-            <script>appendDropdown('optionsDivControls', ['0px', '100px'], ['100%', '50px'], 'Testing Dropdown:', ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'], (e) => { return; });</script>
-            <script>appendSliderNum('optionsDivControls', ['0px', '900px'], ['100%', '100px'], 'Testing Number 2:', [0, 100], 69, (e) => { return; });</script>
+            
+            <script>
+
+                let p = 'optionsDivControls';
+
+                appendSliderNum(p, ['0px', '0px'], ['100%', '100px'], 'Testing Number:', [0, 100], 69, (e) => { return; });
+
+                appendDropdown(p, ['0px', '100px'], ['100%', '50px'], 'Testing Dropdown:', ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'], (e) => { return; });
+
+                appendSwitch(p, ['0px', '150px'], ['100%', '50px'], 'Testing Switch:', false, (e) => { return; });
+                appendSwitch(p, ['0px', '200px'], ['100%', '50px'], 'Testing Switch 2:', true, (e) => { return; });
+
+                appendSliderNum(p, ['0px', '900px'], ['100%', '100px'], 'Testing Number 2:', [0, 100], 69, (e) => { return; });
+
+            </script>
+
         </div>
 
         <div class="tab optionsDivTab hidden" id="optionsDivVisual">

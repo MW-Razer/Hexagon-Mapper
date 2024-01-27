@@ -6,6 +6,10 @@ div.switchcontainer {
     transition: background-color 0.1s ease-out, background-image 0.1s ease-out;
 }
 
+div.switchcontainer p {
+    left: 5%;
+}
+
 div.switchcontainer:hover {
     background: var(--compound-background-color-hover);
 }
@@ -16,6 +20,7 @@ div.switchcontainer:active {
 
 div.switch {
     position: absolute;
+    cursor: var(--cursor-pointer);
     right: 5%;
     top: 10px;
     width: 60px;
@@ -32,10 +37,10 @@ div.switch.on {
 
 div.switch div.handle {
     position: absolute;
-    left: 2px;
+    left: 3px;
     top: 2px;
-    width: 26px;
-    height: 22px;
+    width: 24px;
+    height: 20px;
     background: var(--switch-handle-color);
     border: 1px solid var(--switch-handle-border-color);
     border-radius: var(--switch-handle-border-radius);
@@ -43,17 +48,17 @@ div.switch div.handle {
 }
 
 div.switch.on div.handle {
-    left: 28px;
+    left: 30px;
     background: var(--switch-handle-color-on);
     border: 1px solid var(--switch-handle-border-color-on);
 }
 
 div.switch div.handlediv {
     position: absolute;
-    left: 2px;
-    top: 6px;
-    width: 26px;
-    height: 22px;
+    left: 3px;
+    top: 5px;
+    width: 24px;
+    height: 21px;
     background: var(--switch-handle-div-color);
     border: 1px solid var(--switch-handle-div-border-color);
     border-radius: var(--switch-handle-border-radius);
@@ -61,7 +66,7 @@ div.switch div.handlediv {
 }
 
 div.switch.on div.handlediv {
-    left: 28px;
+    left: 30px;
     background: var(--switch-handle-div-color-on);
     border: 1px solid var(--switch-handle-div-border-color-on);
 }

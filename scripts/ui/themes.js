@@ -264,8 +264,20 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--slider-handle-color-hover', 'rgb(230, 230, 230)'],
     ['--slider-handle-color-active', 'rgb(210, 210, 210)'],
     ['--slider-handle-border-color-active', 'rgb(10, 10, 10)'],
-    ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px']
+    ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px'],
     // switches
+    ['--switch-color', 'rgb(180, 180, 180)'],
+    ['--switch-color-on', 'rgb(100, 180, 250)'],
+    ['--switch-border-color', 'rgb(120, 120, 120)'],
+    ['--switch-handle-border-radius', '5px 5px 5px 5px'],
+    ['--switch-handle-color', 'rgb(250, 250, 250)'],
+    ['--switch-handle-border-color', 'rgb(250, 250, 250)'],
+    ['--switch-handle-color-on', 'rgb(250, 250, 250)'],
+    ['--switch-handle-border-color-on', 'rgb(250, 250, 250)'],
+    ['--switch-handle-div-color', 'rgb(210, 210, 210)'],
+    ['--switch-handle-div-border-color', 'rgb(210, 210, 210)'],
+    ['--switch-handle-div-color-on', 'rgb(210, 210, 210)'],
+    ['--switch-handle-div-border-color-on', 'rgb(210, 210, 210)']
     
 ]);
 
@@ -347,7 +359,20 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--slider-handle-color-hover', 'rgb(230, 230, 230)'],
     ['--slider-handle-color-active', 'rgb(210, 210, 210)'],
     ['--slider-handle-border-color-active', 'rgb(210, 210, 210)'],
-    ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px']
+    ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px'],
+    // switches
+    ['--switch-color', 'rgb(50, 50, 50)'],
+    ['--switch-color-on', 'rgb(60, 80, 200)'],
+    ['--switch-border-color', 'rgb(180, 180, 180)'],
+    ['--switch-handle-border-radius', '5px 5px 5px 5px'],
+    ['--switch-handle-color', 'rgb(250, 250, 250)'],
+    ['--switch-handle-border-color', 'rgb(250, 250, 250)'],
+    ['--switch-handle-color-on', 'rgb(250, 250, 250)'],
+    ['--switch-handle-border-color-on', 'rgb(250, 250, 250)'],
+    ['--switch-handle-div-color', 'rgb(210, 210, 210)'],
+    ['--switch-handle-div-border-color', 'rgb(210, 210, 210)'],
+    ['--switch-handle-div-color-on', 'rgb(210, 210, 210)'],
+    ['--switch-handle-div-border-color-on', 'rgb(210, 210, 210)']
 ]);
 
 const matrix = new Theme('Matrix', 'matrix', [
@@ -428,7 +453,20 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--slider-handle-color-hover', 'rgb(20, 40, 20)'],
     ['--slider-handle-color-active', 'rgb(30, 170, 30)'],
     ['--slider-handle-border-color-active', 'rgb(40, 180, 40)'],
-    ['--slider-handle-border-radius', '5px 5px 5px 5px']
+    ['--slider-handle-border-radius', '5px 5px 5px 5px'],
+    // switches
+    ['--switch-color', 'rgb(20, 25, 20)'],
+    ['--switch-color-on', 'rgb(20, 80, 20)'],
+    ['--switch-border-color', 'rgb(60, 180, 60)'],
+    ['--switch-handle-border-radius', '2px 2px 2px 2px'],
+    ['--switch-handle-color', 'rgb(30, 40, 30)'],
+    ['--switch-handle-border-color', 'rgb(30, 200, 30)'],
+    ['--switch-handle-color-on', 'rgb(30, 200, 30)'],
+    ['--switch-handle-border-color-on', 'rgb(30, 200, 30)'],
+    ['--switch-handle-div-color', 'rgb(25, 30, 25)'],
+    ['--switch-handle-div-border-color', 'rgb(20, 160, 20)'],
+    ['--switch-handle-div-color-on', 'rgb(20, 160, 20)'],
+    ['--switch-handle-div-border-color-on', 'rgb(20, 160, 20)']
 ]);
 
 const blood_moon = new Theme('Blood Moon', 'blood_moon', [
@@ -509,7 +547,20 @@ const blood_moon = new Theme('Blood Moon', 'blood_moon', [
     ['--slider-handle-color-hover', 'rgb(40, 20, 20)'],
     ['--slider-handle-color-active', 'rgb(170, 30, 30)'],
     ['--slider-handle-border-color-active', 'rgb(180, 20, 20)'],
-    ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px']
+    ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px'],
+    // switches
+    ['--switch-color', 'linear-gradient(90deg, rgba(60,10,10,1) 0%, rgba(20,5,5,1) 100%)'],
+    ['--switch-color-on', 'linear-gradient(270deg, rgba(200,20,20,1) 0%, rgba(100,10,10,1) 100%)'],
+    ['--switch-border-color', 'rgb(150, 10, 10)'],
+    ['--switch-handle-border-radius', '5px 5px 5px 5px'],
+    ['--switch-handle-color', 'rgb(80, 60, 60)'],
+    ['--switch-handle-border-color', 'rgb(80, 60, 60)'],
+    ['--switch-handle-color-on', 'rgb(80, 30, 30)'],
+    ['--switch-handle-border-color-on', 'rgb(80, 30, 30)'],
+    ['--switch-handle-div-color', 'rgb(60, 40, 40)'],
+    ['--switch-handle-div-border-color', 'rgb(60, 40, 40)'],
+    ['--switch-handle-div-color-on', 'rgb(60, 20, 20)'],
+    ['--switch-handle-div-border-color-on', 'rgb(60, 20, 20)']
 ]);
 
 /*
