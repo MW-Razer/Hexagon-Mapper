@@ -1,0 +1,26 @@
+/* num input boxes */
+
+.numcontainer {
+    position: absolute;
+    height: 50px;
+    background: var(--compound-background-color);
+    transition: background-color 0.2s ease-out, background-image 0.1s ease-out;
+}
+
+.numcontainer:hover {
+    background: var(--compound-background-color-hover);
+}
+
+.numcontainer:active {
+    background: var(--compound-background-color-active);
+}
+
+.num {
+    right: 5%;
+    top: 10px;
+}
+
+.numlabel {
+    left: 5%;
+    top: 0px;
+}

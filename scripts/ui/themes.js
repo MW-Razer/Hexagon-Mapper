@@ -198,6 +198,8 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--compound-background-color', 'rgb(240, 240, 240)'],
     ['--compound-background-color-hover', 'rgb(230, 230, 230)'],
     ['--compound-background-color-active', 'rgb(220, 220, 220)'],
+    // images / icons
+    ['--icon-filter', 'saturate(0%) brightness(3.0)'],
     // scrollbars
     ['--scrollbar-color', 'rgb(200, 200, 200)'],
     ['--scrollbar-border-radius', '0px 10px 10px 0px'],
@@ -293,6 +295,8 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--compound-background-color', 'rgb(30, 30, 30)'],
     ['--compound-background-color-hover', 'rgb(30, 30, 40)'],
     ['--compound-background-color-active', 'rgb(30, 30, 60)'],
+    // images / icons
+    ['--icon-filter', 'hue-rotate(240deg) saturate(10%) brightness(3.5)'],
     // scrollbars
     ['--scrollbar-color', 'rgb(80, 80, 80)'],
     ['--scrollbar-border-radius', '0px 10px 10px 0px'],
@@ -387,6 +391,8 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--compound-background-color', 'rgb(5, 10, 5)'],
     ['--compound-background-color-hover', 'rgb(5, 20, 5)'],
     ['--compound-background-color-active', 'rgb(10, 30, 10)'],
+    // images / icons
+    ['--icon-filter', 'hue-rotate(135deg) brightness(5.0)'],
     // scrollbars
     ['--scrollbar-color', 'rgb(20, 30, 20)'],
     ['--scrollbar-border-radius', '0px 5px 5px 0px'],
@@ -481,6 +487,8 @@ const blood_moon = new Theme('Blood Moon', 'blood_moon', [
     ['--compound-background-color', 'rgba(10, 5, 5, 0.5)'],
     ['--compound-background-color-hover', 'rgba(20, 5, 5, 0.5)'],
     ['--compound-background-color-active', 'rgba(30, 10, 10, 0.5)'],
+    // images / icons
+    ['--icon-filter', 'saturate(90%) brightness(1.0)'],
     // scrollbars
     ['--scrollbar-color', 'linear-gradient(0deg, rgba(50,20,20,1) 0%, rgba(20,5,5,1) 100%)'],
     ['--scrollbar-border-radius', '0px 5px 10px 0px'],

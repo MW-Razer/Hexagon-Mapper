@@ -29,6 +29,9 @@
     --compound-backgound-color-hover: rgb(230, 230, 230);
     --compound-backgound-color-active: rgb(220, 220, 220);
 
+    /* images / icons */
+    --icon-filter: saturate(0%) brightness(5.0);
+
     /* scrollbar */
     --scrollbar-color: rgb(200, 200, 200);
     --scrollbar-border-radius: 0px 10px 10px 0px;

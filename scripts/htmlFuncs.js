@@ -28,6 +28,12 @@ function getElem(comp) {
 
 }
 
+function click(elem) {
+
+  getElem(elem).click();
+
+}
+
 function hide(elem) {
 
   elem = getElem(elem);

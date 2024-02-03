@@ -15,6 +15,8 @@ function appendNavbar(navbar, tabHeight, options = []) {
 
     navbar.appendChild(d);
 
+    let buttonToClick = null;
+
     for (let i = 0; i < options.length; i++) {
 
         let b = document.createElement('button');
@@ -53,10 +55,11 @@ function appendNavbar(navbar, tabHeight, options = []) {
         */
         
         if (i == 0) {
-            b.classList.add('selected');
-            b.click();
+            buttonToClick = b;
         }
 
     }
+
+    buttonToClick.onload = () => { this.click(); }
 
 }

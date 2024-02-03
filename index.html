@@ -14,6 +14,7 @@
     <link href="stylesheets/mechanical.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/panel.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/navbar.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/num.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/slider.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/dropdown.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/switch.css" rel="stylesheet" type="text/css" />
@@ -25,6 +26,7 @@
     <!-- these scripts are for ui setup -->
 	<script src="scripts/htmlFuncs.js"></script>
 	<script src="scripts/ui/navbar.js"></script>
+	<script src="scripts/ui/num.js"></script>
 	<script src="scripts/ui/slider.js"></script>
 	<script src="scripts/ui/dropdown.js"></script>
 	<script src="scripts/ui/switch.js"></script>
@@ -33,73 +35,106 @@
 		
 	</div>
 
-    <!-- title screen -->
-    <div class="mechcontainer titlebutton" id="mapsButton" style="width: 200px; height: 50px; top: calc(50% + 60px); left: calc(50% - 100px);" onclick="toggleGroup(this, 'titlebutton'); toggleVis('mapsDiv'); toggleMove('mapsDiv', ['calc(50% - 200px)', 'calc(50% - 350px)'], ['calc(50% - 200px)', 'calc(50% - 400px)']);">
-        <div class="jigglediv"></div>
-        <button class="jigglebutton">Maps</button>
-    </div>
-
-    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 120px); left: calc(50% - 100px);" onclick="deactive('mapsButton'); toggleSel(this); toggleVis('optionsDiv'); toggleMove('optionsDiv', ['calc(50% - 510px)', 'calc(50% - 250px)'], ['calc(50% - 560px)', 'calc(50% - 250px)']);">
-        <div class="jigglediv"></div>
-        <button class="jigglebutton">Options</button>
-    </div>
-
-    <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 180px); left: calc(50% - 100px);" onclick="deactive('mapsButton'); toggleSel(this); toggleVis('themesDiv'); toggleMove('themesDiv', ['calc(50% + 110px)', 'calc(50% - 250px)'], ['calc(50% + 160px)', 'calc(50% - 250px)']);">
-        <div class="jigglediv"></div>
-        <button class="jigglebutton">Themes</button>
-    </div>
-
-    <div class="panel hidden" id="mapsDiv" style="width: 400px; height: 400px; top: calc(50% - 400px); left: calc(50% - 200px);">
-        <div class="navbar" id="mapsDivNavbar">
-            <script>appendNavbar('mapsDivNavbar', '355px', ['New Map', 'Load Map'])</script>
-        </div>
-        
-        <div class="tab mapsDivTab" id="mapsDivNew Map">
-
-        </div>
-
-        <div class="tab mapsDivTab" id="mapsDivLoad Map">
-            
-        </div>
-
     
-    </div>
+    <!-- title screen -->
+    <div id="titleScreenDiv" style="width: 100%; height: 100%;">
 
-    <div class="panel hidden" id="optionsDiv" style="width: 400px; height: 500px; top: calc(50% - 250px); left: calc(50% - 560px);">
-        <div class="navbar" id="optionsDivNavbar">
-            <script>appendNavbar('optionsDivNavbar', '455px', ['Controls', 'Visual', 'Audio']);</script>
+        <div class="mechcontainer" style="width: 50px; height: 50px; top: 10px; left: 10px;">
+            <div></div>
+            <button class="icon">
+                <img src="images/red-hexagon-contrast.png" href="testing" style="width: 40px; height: 40px; top: 2px; left: 4px;">
+            </button>
         </div>
 
-        <div class="tab optionsDivTab" id="optionsDivControls">
+        <div class="mechcontainer titlebutton" id="mapsButton" style="width: 200px; height: 50px; top: calc(50% + 60px); left: calc(50% - 100px);" onclick="toggleGroup(this, 'titlebutton'); toggleVis('mapsDiv'); toggleMove('mapsDiv', ['calc(50% - 200px)', 'calc(50% - 350px)'], ['calc(50% - 200px)', 'calc(50% - 400px)']);">
+            <div class="jigglediv"></div>
+            <button class="jigglebutton">Maps</button>
+        </div>
+
+        <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 120px); left: calc(50% - 100px);" onclick="deactive('mapsButton'); toggleSel(this); toggleVis('optionsDiv'); toggleMove('optionsDiv', ['calc(50% - 510px)', 'calc(50% - 250px)'], ['calc(50% - 560px)', 'calc(50% - 250px)']);">
+            <div class="jigglediv"></div>
+            <button class="jigglebutton">Options</button>
+        </div>
+
+        <div class="mechcontainer titlebutton" style="width: 200px; height: 50px; top: calc(50% + 180px); left: calc(50% - 100px);" onclick="deactive('mapsButton'); toggleSel(this); toggleVis('themesDiv'); toggleMove('themesDiv', ['calc(50% + 110px)', 'calc(50% - 250px)'], ['calc(50% + 160px)', 'calc(50% - 250px)']);">
+            <div class="jigglediv"></div>
+            <button class="jigglebutton">Themes</button>
+        </div>
+
+        <div class="panel hidden" id="mapsDiv" style="width: 400px; height: 400px; top: calc(50% - 400px); left: calc(50% - 200px);">
+            <div class="navbar" id="mapsDivNavbar">
+                <script>appendNavbar('mapsDivNavbar', '355px', ['New Map', 'Load Map'])</script>
+            </div>
             
-            <script>
+            <div class="tab mapsDivTab" id="mapsDivNew Map">
 
-                let p = 'optionsDivControls';
+                <div class="mechcontainer titlebutton" style="width: 300px; height: 50px; bottom: 20px; left: calc(50% - 150px);" onclick="click('mapsButton'); hide('titleScreenDiv'); show('mapScreenDiv');">
+                    <div class="jigglediv"></div>
+                    <button class="jigglebutton">Create</button>
+                </div>
 
-                appendSliderNum(p, ['0px', '0px'], ['100%', '100px'], 'Testing Number:', [0, 100], 69, (e) => { return; });
+            </div>
 
-                appendDropdown(p, ['0px', '100px'], ['100%', '50px'], 'Testing Dropdown:', ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'], (e) => { return; });
+            <div class="tab mapsDivTab hidden" id="mapsDivLoad Map">
+                
+            </div>
 
-                appendSwitch(p, ['0px', '150px'], ['100%', '50px'], 'Testing Switch:', false, (e) => { return; });
-                appendSwitch(p, ['0px', '200px'], ['100%', '50px'], 'Testing Switch 2:', true, (e) => { return; });
+        
+        </div>
 
-                appendSliderNum(p, ['0px', '900px'], ['100%', '100px'], 'Testing Number 2:', [0, 100], 69, (e) => { return; });
+        <div class="panel hidden" id="optionsDiv" style="width: 400px; height: 500px; top: calc(50% - 250px); left: calc(50% - 560px);">
+            <div class="navbar" id="optionsDivNavbar">
+                <script>appendNavbar('optionsDivNavbar', '455px', ['Controls', 'Visual', 'Audio']);</script>
+            </div>
 
-            </script>
+            <div class="tab optionsDivTab" id="optionsDivControls">
+                
+                <script>
+
+                    let p = 'optionsDivControls';
+
+                    appendSliderNum(p, ['0px', '0px'], ['100%', '100px'], 'Testing NumSlider:', [0, 100], 69, (e) => { return; });
+
+                    appendDropdown(p, ['0px', '100px'], ['100%', '50px'], 'Testing Option:', ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'], (e) => { return; });
+
+                    appendSwitch(p, ['0px', '150px'], ['100%', '50px'], 'Testing Switch Off:', false, (e) => { return; });
+                    appendSwitch(p, ['0px', '200px'], ['100%', '50px'], 'Testing Switch On:', true, (e) => { return; });
+                    
+                    appendSliderOption(p, ['0px', '250px'], ['100%', '100px'], 'Testing OptionSlider:', ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'], 2, (e) => { return; });
+                    
+                    appendNum(p, ['0px', '350px'], ['100%', '50px'], 'Testing Num:', [0, 1000], 420, (e) => { return; });
+
+                    appendSliderNum(p, ['0px', '900px'], ['100%', '100px'], 'Testing Number 2:', [0, 100], 69, (e) => { return; });
+
+                </script>
+
+            </div>
+
+            <div class="tab optionsDivTab hidden" id="optionsDivVisual">
+                <button>graphics</button>
+            </div>
+
+            <div class="tab optionsDivTab hidden" id="optionsDivAudio">
+                <button>sound</button>
+            </div>
 
         </div>
 
-        <div class="tab optionsDivTab hidden" id="optionsDivVisual">
-            <button>graphics</button>
-        </div>
+        <div class="panel hidden" id="themesDiv" style="width: 300px; height: 500px; top: calc(50% - 250px); left: calc(50% + 160px);">
 
-        <div class="tab optionsDivTab hidden" id="optionsDivAudio">
-            <button>sound</button>
         </div>
 
     </div>
 
-    <div class="panel hidden" id="themesDiv" style="width: 300px; height: 500px; top: calc(50% - 250px); left: calc(50% + 160px);">
+    <div class="hidden" id="mapScreenDiv" style="width: 100%; height: 100%;">
+
+        <div class="mechcontainer" style="width: 50px; height: 50px; top: 10px; left: 10px;">
+            <div></div>
+            <button class="icon">
+                <img src="images/gear.png" href="settings" style="width: 40px; height: 40px; top: 2px; left: 4px;">
+            </button>
+        </div>
+
 
     </div>
     
