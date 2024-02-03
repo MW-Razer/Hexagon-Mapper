@@ -296,7 +296,7 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--compound-background-color-hover', 'rgb(30, 30, 40)'],
     ['--compound-background-color-active', 'rgb(30, 30, 60)'],
     // images / icons
-    ['--icon-filter', 'hue-rotate(240deg) saturate(10%) brightness(3.5)'],
+    ['--icon-filter', 'hue-rotate(240deg) saturate(5%) brightness(4.0)'],
     // scrollbars
     ['--scrollbar-color', 'rgb(80, 80, 80)'],
     ['--scrollbar-border-radius', '0px 10px 10px 0px'],

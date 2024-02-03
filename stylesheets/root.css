@@ -148,3 +148,8 @@ button {
 .clickthru {
     pointer-events: none;
 }
+
+
+img {
+    position: absolute;
+}

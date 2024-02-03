@@ -21,3 +21,17 @@ h3 {
     font: 24px var(--header-font);
     color: var(--text-color);
 }
+
+
+h1 {
+    position: absolute;
+    user-select: none;
+    font: 32px var(--title-font);
+    color: var(--text-color);
+    text-align: center;
+    transition: color 0.2s ease-out;
+}
+
+h1:hover {
+    color: var(--text-color-light);
+}
