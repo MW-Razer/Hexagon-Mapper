@@ -55,11 +55,9 @@ function appendNavbar(navbar, tabHeight, options = []) {
         */
         
         if (i == 0) {
-            buttonToClick = b;
+            b.classList.add('selected');
         }
 
     }
-
-    buttonToClick.onload = () => { this.click(); }
 
 }
