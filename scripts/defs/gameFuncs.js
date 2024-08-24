@@ -84,7 +84,7 @@ function getNeg(num) {
   return num < 0 ? -1 : 1;
 }
 
-function hexToRGB(hex) {
+function hexToRgb(hex) {
 
   if (hex[0] == '#') {
     hex = hex.substring(1, 7);
@@ -105,6 +105,19 @@ function compToHex(c) {
 
 function rgbToHex(r, g, b) {
   return "#" + compToHex(r) + compToHex(g) + compToHex(b);
+}
+
+function rgbStrToColor(str) {
+
+  let comp = str.split(',');
+
+  return new Color(
+    parseInt(comp[0].split('(')[1]),
+    parseInt(comp[1].trim()),
+    parseInt(comp[2].split(')')[0].trim()),
+    1
+  );
+
 }
 
 function getIndex(arr, val) {
@@ -166,4 +179,9 @@ function toGrayscale(c) {
   
   return new Color(v, v, v, c.a);
   
+}
+
+function whitelistChars(whitelist, str) {
+  let regex = new RegExp(`[^${whitelist}]`, 'g');
+  return str.replace(regex, '');
 }

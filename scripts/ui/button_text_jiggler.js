@@ -1,8 +1,8 @@
 // jiggle the text inside buttons
 // buttons with jiggly text MUST be placed inside a same-size container
 
-const letterDelay = 150;
-const restartDelay = 800;
+const letterDelay = 125; // time between each letter jiggling
+const restartDelay = 800; // time before it starts jiggling again
 
 let buttons = document.getElementsByClassName("jigglebutton");
 

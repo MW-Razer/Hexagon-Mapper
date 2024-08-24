@@ -1,0 +1,24 @@
+/* default list settings */
+
+ul {
+    list-style-type: none;
+    margin-left: 5px;
+    margin-top: 10px;
+    padding: 0;
+    text-overflow: ellipsis;
+}
+
+li {
+    background: var(--panel-color);
+    font: 16px var(--text-font);
+    color: var(--text-color);
+    user-select: none;
+    text-overflow: ellipsis;
+    width: inherit;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out, color 0.1s ease-out;
+}
+
+li:hover {
+    background: var(--panel-color-hover);
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out, color 0.1s ease-out;
+}

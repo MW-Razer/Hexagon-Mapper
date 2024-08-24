@@ -2,7 +2,7 @@
 
 let openDropdown = null;
 
-function appendDropdown(elem, pos, dim, label, options, inputFunc) {
+function appendDropdown(elem, pos, dim, label, options, inputFunc, rightText = false, minPos = null, minDim = null) {
 
     elem = getElem(elem);
 
@@ -12,8 +12,27 @@ function appendDropdown(elem, pos, dim, label, options, inputFunc) {
     d.style.left = pos[0];
     d.style.top = pos[1];
 
+    if (minPos != null) {
+
+        d.style.left = `max(${pos[0]}, ${minPos[0]})`;
+        d.style.top = `max(${pos[1]}, ${minPos[1]})`;
+
+    } else {
+
+        d.style.left = pos[0];
+        d.style.top = pos[1];
+
+    }
+
     d.style.width = dim[0];
     d.style.height = dim[1];
+
+    if (minDim != null) {
+
+        d.style.minWidth = minDim[0];
+        d.style.minHeight = minDim[1];
+
+    }
 
     let underDiv = document.createElement('div');
     underDiv.classList.add('dropdownUnderDiv');
@@ -25,10 +44,20 @@ function appendDropdown(elem, pos, dim, label, options, inputFunc) {
     p.classList.add('clickthru');
     p.innerHTML = `${label}`;
 
+    if (rightText === true) {
+
+        p.style.right = 'max(60%, calc(8% + 100px))';
+
+    } else {
+
+        p.style.left = '5%';
+
+    }
+
     let b = document.createElement('button');
     b.classList.add('dropdown');
 
-    b.style.width = `200px`;
+    b.style.width = `50%`;
     b.style.height = `30px`;
 
     b.innerHTML = `${options[0]}`;
@@ -63,8 +92,15 @@ function appendDropdown(elem, pos, dim, label, options, inputFunc) {
     underDiv.onclick = function() {
 
         if (od.classList.contains('closed')) {
+
+            if (openDropdown != null) {
+                openDropdown.classList.add('closed');
+                openDropdown = null;
+            }
+
             od.classList.remove('closed');
             openDropdown = od;
+            
         } else {
             od.classList.add('closed');
             openDropdown = null;
@@ -73,6 +109,11 @@ function appendDropdown(elem, pos, dim, label, options, inputFunc) {
     }
 
     b.onclick = function() {
+
+        // if (openDropdown != null) {
+        //     openDropdown.classList.add('closed');
+        //     openDropdown = null;
+        // }
 
         if (od.classList.contains('closed')) {
             od.classList.remove('closed');

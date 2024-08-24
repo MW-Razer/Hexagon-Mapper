@@ -1,4 +1,0 @@
-// initializes everything
-
-addAllJiggle();
-

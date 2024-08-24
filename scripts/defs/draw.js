@@ -1,3 +1,50 @@
+// the loop
+
+let drawAllToolTargets = true;
+
+function draw() {
+
+    if (grid != null) {
+        
+        grid.drawCtx.clearRect(0, 0, grid.drawCanv.width, grid.drawCanv.height);
+
+        if (grid.hoverHex != null) {
+
+            // selectedTool.draw(drawAllToolTargets);
+
+            if (mouse.left) {
+
+                if (grid.selectedObject != null) {
+                    
+                    selectedTool.use(true, drawAllToolTargets);
+        
+                } else {
+
+                    selectedTool.targetFunc(selectedTool.size, selectedTool.opacity, selectedTool.shape, selectedTool.data, true, drawAllToolTargets);
+
+                }
+        
+            } else {
+
+                selectedTool.targetFunc(selectedTool.size, selectedTool.opacity, selectedTool.shape, selectedTool.data, true, drawAllToolTargets);
+
+            }
+
+        }
+        
+    }
+
+    requestAnimationFrame(draw);
+
+}
+
+draw();
+
+
+
+// idk what this is
+
+/*
 const sq3 = Math.sqrt(3);
 
 const fastGetHexPoints = (x, y, hw) => [
@@ -20,7 +67,7 @@ const drawGridHexagon = (board, px, py, sz, c) => {
     }
 }
 
-export const drawHexGrid = (gridCanvas, [sx,sy]) => {
+const drawHexGrid = (gridCanvas, [sx,sy]) => {
     const sizeX = gridCanvas.width/(sx*2);
     const sizeY = gridCanvas.height/(sy*2);
     const size = sizeX < sizeY ? sizeX: sizeY;
@@ -60,7 +107,7 @@ export const drawHexGrid = (gridCanvas, [sx,sy]) => {
     gridContext.stroke();
 }
 
-export const drawHexMap = (hexMap, gridCanvas) => {
+const drawHexMap = (hexMap, gridCanvas) => {
     const {factions, hexes, width, height, hexOpacity, imageData, image} = hexMap
     let hexInfo = new Array(factions.length).fill(0).map(() => []);
 
@@ -112,3 +159,4 @@ export const drawHexMap = (hexMap, gridCanvas) => {
     gridContext.lineTo(0, spacing*height);
     gridContext.stroke();
 }
+*/

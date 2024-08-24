@@ -7,7 +7,7 @@ div.switchcontainer {
 }
 
 div.switchcontainer p {
-    left: 5%;
+    text-wrap: nowrap;
 }
 
 div.switchcontainer:hover {

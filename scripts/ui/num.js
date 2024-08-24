@@ -1,17 +1,33 @@
 // setup number boxes
 
-function appendNum(elem, pos, dim, label, range, val, inputFunc) {
+function appendNum(elem, pos, dim, label, range, val, inputFunc, rightText = false, minPos = null, minDim = null) {
 
     elem = getElem(elem);
 
     let div = document.createElement('div');
     div.classList.add('numcontainer');
 
-    div.style.left = pos[0];
-    div.style.top = pos[1];
+    if (minPos != null) {
+
+        div.style.left = `max(${pos[0]}, ${minPos[0]})`;
+        div.style.top = `max(${pos[1]}, ${minPos[1]})`;
+
+    } else {
+
+        div.style.left = pos[0];
+        div.style.top = pos[1];
+
+    }
 
     div.style.width = dim[0];
     div.style.height = dim[1];
+
+    if (minDim != null) {
+
+        div.style.minWidth = minDim[0];
+        div.style.minHeight = minDim[1];
+
+    }
 
     let underDiv = document.createElement('div');
     underDiv.style.width = `100%`;
@@ -28,6 +44,16 @@ function appendNum(elem, pos, dim, label, range, val, inputFunc) {
     text.classList.add('numlabel');
     text.classList.add('clickthru');
     text.innerHTML = `${label}`;
+
+    if (rightText === true) {
+
+        text.style.right = 'calc(5% + 115px)';
+
+    } else {
+
+        text.style.left = '5%';
+
+    }
 
     underDiv.onclick = function() {
 

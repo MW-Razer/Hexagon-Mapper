@@ -23,6 +23,7 @@
     --text-color: rgb(0, 0, 0);
     --text-color-light: rgb(50, 50, 50);
     --cursor-pointer: pointer;
+    --cursor-default: default;
 
     /* compound elem backgrounds */
     --compound-backgound-color: rgb(240, 240, 240);
@@ -47,6 +48,9 @@
     --input-color-hover: rgb(190, 220, 240);
     --input-color-active: rgb(150, 200, 240);
     --input-font-color-active: rgb(0, 0, 0);
+
+    /* buttons */
+    --button-border-radius: 5px 5px 5px 5px;
 
     /* mechanical buttons */
     --mech-color: rgb(240, 240, 240);
@@ -73,9 +77,15 @@
 
     /* panels */
     --panel-color: rgb(240, 240, 240);
+    --panel-color-hover: rgb(210, 210, 210);
+    --panel-color-active: rgb(120, 170, 220);
+    --panel-color-sel: rgb(150, 200, 250);
+    --panel-color-hover-sel: rgb(100, 170, 250);
+    --panel-color-active-sel: rgb(80, 140, 250);
     --panel-shadow: 1px 3px 2px rgba(0, 0, 0, 0.5);
     --panel-border-color: rgb(10, 10, 10);
-    --panel-border-radius: 10px 10px 10px 10px;
+    --panel-border-color-sel: rgb(10, 10, 80);
+    --panel-border-border-radius: 10px 10px 10px 10px;
 
     /* tabs */
     --navbar-color: rgb(230, 230, 230);
@@ -130,8 +140,22 @@ html, body {
     background: var(--background-color);
 }
 
+canvas {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0px;
+    left: 0px;
+    transform-origin: top left;
+    /* image-rendering: pixelated; */
+}
+
 .hidden {
     visibility: hidden;
+    opacity: 0;
+}
+
+.invis {
     opacity: 0;
 }
 
@@ -152,4 +176,27 @@ button {
 
 img {
     position: absolute;
+}
+
+div {
+    transition: top 0.1s ease-out, left 0.1s ease-out;
+}
+
+/* canvas {
+    outline: 2px solid #ffffff;
+} */
+
+.hex::before {
+    content: "\2b22";
+    font-size: 35px;
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    pointer-events: none;
+}
+
+.hex {
+    user-select: none;
+    pointer-events: none;
 }

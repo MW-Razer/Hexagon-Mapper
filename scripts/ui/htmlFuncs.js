@@ -34,6 +34,12 @@ function click(elem) {
 
 }
 
+function val(elem) {
+
+  return getElem(elem).value;
+
+}
+
 function hide(elem) {
 
   elem = getElem(elem);
@@ -211,3 +217,105 @@ function toggleMove(elem, p1, p2) {
 }
 
 // menu functionality
+
+function toggleViewSelector() {
+
+  let elem = getElem('viewSelectorButtonButton');
+
+  elem.innerHTML = elem.innerHTML == '&lt;' ? '&gt;' : '&lt;';
+
+}
+
+// turns an input into a resizing input (using ch measurement)
+function fitTextInput(input, minWidth, maxWidth) {
+
+  input.onchange = function() {
+
+    let w = input.innerHTML;
+
+    if (w < minWidth) {
+      input.style.width = `${minWidth}ch`;
+    } else if (w > maxWidth) {
+      input.style.width = `${maxWidth}ch`;
+    } else {
+      input.style.width = `${w}ch`;
+    }
+
+  }
+  
+}
+
+// updates hex info panel
+function updateHexInfo() {
+
+  infoPanelTitle.innerHTML = `Hexagon (${grid.hoverHex.x}, ${grid.hoverHex.y})`;
+
+  // biomes
+  infoPanelBio.innerHTML = `<li style="font: 18px var(--header-font);">Biomes:</li>`;
+
+  if (grid.hoverHex.bio.length == 0) {
+
+    let el = document.createElement('li');
+    el.classList.add('light');
+    el.innerHTML = `None`;
+
+    infoPanelBio.appendChild(el)
+
+  } else {
+
+    grid.hoverHex.bio.sort((a, b) => b - a);
+  
+    // calculate total bio
+    let totalBio = 0;
+    for (let i = 0; i < grid.hoverHex.bio.length; i++) {
+  
+      totalBio += grid.hoverHex.bio[i][1];
+  
+    }
+  
+    for (let i = 0; i < grid.hoverHex.bio.length; i++) {
+  
+      let el = document.createElement('li');
+      el.innerHTML = `${Math.round(grid.hoverHex.bio[i][1] * 100)} (${Math.round((grid.hoverHex.bio[i][1] * 100) / totalBio)}%): ${biomes[grid.hoverHex.bio[i][0]].name}`;
+  
+      infoPanelBio.appendChild(el);
+  
+    }
+
+  }
+
+  // resources
+  infoPanelRes.innerHTML = `<li style="font: 18px var(--header-font);">Resources:</li>`;
+
+  if (grid.hoverHex.res.length == 0) {
+
+    let el = document.createElement('li');
+    el.classList.add('light');
+    el.innerHTML = `None`;
+
+    infoPanelRes.appendChild(el)
+
+  } else {
+
+    grid.hoverHex.res.sort((a, b) => b - a);
+
+    // calculate total res
+    let totalRes = 0;
+    for (let i = 0; i < grid.hoverHex.res.length; i++) {
+
+      totalRes += grid.hoverHex.res[i][1];
+
+    }
+
+    for (let i = 0; i < grid.hoverHex.res.length; i++) {
+
+      let el = document.createElement('li');
+      el.innerHTML = `${Math.round(grid.hoverHex.res[i][1] * 100)} (${Math.round((grid.hoverHex.res[i][1] * 100) / totalRes)}%): ${resources[grid.hoverHex.res[i][0]].name}`;
+
+      infoPanelRes.appendChild(el);
+
+    }
+
+  }
+
+}

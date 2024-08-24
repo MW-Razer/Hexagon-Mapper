@@ -9,6 +9,7 @@ input {
     color: var(--text-color);
     border: 1px solid var(--input-border-color);
     border-radius: var(--input-border-radius);
+    padding-left: 5px;
     transition: background-color 0.1s ease-out, background-image 0.1s ease-out, color 0.1s ease-out, border-color 0.1s ease-out;
 }
 
@@ -17,6 +18,29 @@ input:hover {
 }
 
 input:active {
+    background: var(--input-color-active);
+    color: var(--input-font-color-active);
+}
+
+/* ghost input */
+input.ghost {
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    font: 16px var(--text-font);
+    background: var(--panel-color);
+    color: var(--text-color);
+    border: 0px;
+    border-radius: var(--input-border-radius);
+    padding-left: 5px;
+    transition: background-color 0.1s ease-out, background-image 0.1s ease-out, color 0.1s ease-out, border-color 0.1s ease-out;
+}
+
+input.ghost:hover {
+    background: var(--navbar-color);
+}
+
+input.ghost:active {
     background: var(--input-color-active);
     color: var(--input-font-color-active);
 }
@@ -34,4 +58,13 @@ input[type=number]:hover::-webkit-inner-spin-button, input[type=number]:hover::-
 
 input[type=number]:hover::-webkit-inner-spin-button:hover, input[type=number]:hover::-webkit-outer-spin-button:hover {
     opacity: 1.0;
+}
+
+/* color input */
+
+input[type=color] {
+    padding: 0;
+    border-radius: 0px 0px 0px 0px;
+    background: none;
+    border: none;
 }

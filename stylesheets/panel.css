@@ -5,10 +5,51 @@ div {
 }
 
 div.panel {
+    position: absolute;
     background: var(--panel-color);
     box-shadow: var(--panel-shadow);
     border: 1px solid var(--panel-border-color);
     border-radius: var(--panel-border-radius);
     overflow-y: auto;
     transition: visibility 0.1s ease-out, opacity 0.1s ease-out, top 0.1s ease-out, left 0.1s ease-out;
+}
+
+div.panelbutton {
+    position: absolute;
+    background: var(--panel-color);
+    box-shadow: var(--panel-shadow);
+    border: 1px solid var(--panel-border-color);
+    border-radius: var(--panel-border-radius);
+    overflow-y: auto;
+    transition: visibility 0.1s ease-out, opacity 0.1s ease-out, top 0.1s ease-out, left 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;
+}
+
+div.panelbutton:hover {
+    background: var(--panel-color-hover);
+    border: 1px solid var(--panel-border-color);
+    transition: visibility 0.1s ease-out, opacity 0.1s ease-out, top 0.1s ease-out, left 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;
+}
+
+div.panelbutton:active {
+    background: var(--panel-color-active);
+    border: 1px solid var(--panel-border-color);
+    transition: visibility 0.1s ease-out, opacity 0.1s ease-out, top 0.1s ease-out, left 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;
+}
+
+div.panelbutton.selected {
+    background: var(--panel-color-sel);
+    border: 1px solid var(--panel-border-color-sel);
+    transition: visibility 0.1s ease-out, opacity 0.1s ease-out, top 0.1s ease-out, left 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;
+}
+
+div.panelbutton.selected:hover {
+    background: var(--panel-color-hover-sel);
+    border: 1px solid var(--panel-border-color-sel);
+    transition: visibility 0.1s ease-out, opacity 0.1s ease-out, top 0.1s ease-out, left 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;
+}
+
+div.panelbutton.selected:active {
+    background: var(--panel-color-active-sel);
+    border: 1px solid var(--panel-border-color-sel);
+    transition: visibility 0.1s ease-out, opacity 0.1s ease-out, top 0.1s ease-out, left 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out;
 }

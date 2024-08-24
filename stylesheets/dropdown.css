@@ -23,6 +23,7 @@
     border-radius: var(--input-border-radius);
     font: 16px var(--text-font);
     color: var(--text-color);
+    min-width: 100px;
     transition: background-color 0.1s ease-out, background-image 0.1s ease-out, border-color 0.1s ease-out, color 0.1s ease-out;
 }
 
@@ -77,5 +78,4 @@
 
 .dropdowncontainer p {
     position: absolute;
-    left: 5%;
 }

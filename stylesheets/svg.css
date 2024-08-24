@@ -1,0 +1,20 @@
+/* hex svgs and things */
+
+svg.hex {
+    transform-origin: center;
+    transition: scale 0.1s ease-out;
+}
+
+/* '15,0 7.5,12.99 -7.5,12.99 -15,0 -7.5,-12.99 7.5,-12.99' */
+
+svg.hex polygon {
+    visibility: visible;
+}
+
+svg.hex:has(g.polyContainer:hover) {
+    scale: 1.1 1.1;
+}
+
+svg.hex:has(g.polyContainer:active) {
+    scale: 0.9 0.9;
+}

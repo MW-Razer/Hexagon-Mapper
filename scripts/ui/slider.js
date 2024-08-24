@@ -77,7 +77,7 @@ function appendSliderNum(elem, pos, dim, label, range, val, inputFunc) {
 
 }
 
-function appendSliderOption(elem, pos, dim, label, options, val, inputFunc) {
+function appendSliderOption(elem, pos, dim, label, options, val, inputFunc, rightText = false, minPos = null, minDim = null) {
 
     elem = getElem(elem);
 
@@ -87,8 +87,27 @@ function appendSliderOption(elem, pos, dim, label, options, val, inputFunc) {
     d.style.left = pos[0];
     d.style.top = pos[1];
 
+    if (minPos != null) {
+
+        d.style.left = `max(${pos[0]}, ${minPos[0]})`;
+        d.style.top = `max(${pos[1]}, ${minPos[1]})`;
+
+    } else {
+
+        d.style.left = pos[0];
+        d.style.top = pos[1];
+
+    }
+
     d.style.width = dim[0];
     d.style.height = dim[1];
+
+    if (minDim != null) {
+
+        d.style.minWidth = minDim[0];
+        d.style.minHeight = minDim[1];
+
+    }
 
     let slider = document.createElement('input');
     slider.type = 'range';
@@ -107,10 +126,20 @@ function appendSliderOption(elem, pos, dim, label, options, val, inputFunc) {
     p.classList.add('clickthru');
     p.innerHTML = `${label}`;
 
+    if (rightText === true) {
+
+        p.style.right = 'max(60%, calc(8% + 100px))';
+
+    } else {
+
+        p.style.left = `5%`;
+
+    }
+
     let b = document.createElement('button');
     b.classList.add('dropdown');
 
-    b.style.width = `200px`;
+    b.style.width = `50%`;
     b.style.height = `30px`;
 
     b.innerHTML = `${options[val]}`;
@@ -147,6 +176,12 @@ function appendSliderOption(elem, pos, dim, label, options, val, inputFunc) {
     underDiv.onclick = function() {
 
         if (od.classList.contains('closed')) {
+
+            if (openDropdown != null) {
+                openDropdown.classList.add('closed');
+                openDropdown = null;
+            }
+
             od.classList.remove('closed');
             openDropdown = od;
         } else {

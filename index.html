@@ -10,9 +10,12 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
     <link href="stylesheets/root.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/svg.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/button.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/scrollbar.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/text.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/input.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/list.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/mechanical.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/panel.css" rel="stylesheet" type="text/css" />
     <link href="stylesheets/navbar.css" rel="stylesheet" type="text/css" />
@@ -23,20 +26,20 @@
 
 </head>
 
-<body>
+<body oncontextmenu="return false;">
 
     <!-- these scripts are for ui setup -->
-	<script src="scripts/htmlFuncs.js"></script>
+    <script> let p = ''; </script>
+	<script src="scripts/ui/htmlFuncs.js"></script>
 	<script src="scripts/ui/navbar.js"></script>
 	<script src="scripts/ui/num.js"></script>
 	<script src="scripts/ui/slider.js"></script>
 	<script src="scripts/ui/dropdown.js"></script>
 	<script src="scripts/ui/switch.js"></script>
+	<script src="scripts/ui/procedural/biomePanel.js"></script>
 
-	<div id="canvasDiv">
-		
-	</div>
-
+    <!-- stuff that exists for reasons -->
+     <canvas id="colorCanv" style="position: absolute; width: 1px; height: 1px; background-color: #00000000; visibility: hidden;" width="1" height="1"></canvas>
     
     <!-- title screen -->
     <div id="titleScreenDiv" style="width: 100%; height: 100%;">
@@ -80,7 +83,18 @@
             
             <div class="tab mapsDivTab" id="mapsDivNew Map">
 
-                <div class="mechcontainer titlebutton" style="width: 300px; height: 50px; bottom: 20px; left: calc(50% - 150px);" onclick="click('mapsButton'); hide('titleScreenDiv'); show('mapScreenDiv');">
+                <script>
+
+                    p = 'mapsDivNew Map';
+
+                    appendNum(p, ['0px', '0px'], ['100%', '50px'], 'Width:', [1, 10000], 10, (e) => { gridWidth = parseInt(e.value); });
+                    appendNum(p, ['0px', '50px'], ['100%', '50px'], 'Height:', [1, 10000], 10, (e) => { gridHeight = parseInt(e.value); });
+
+                    appendNum(p, ['0px', '100px'], ['100%', '50px'], 'Resolution:', [1, 100000], 1080, (e) => { gridRes = parseInt(e.value); });
+
+                </script>
+
+                <div class="mechcontainer titlebutton" style="width: 300px; height: 50px; bottom: 20px; left: calc(50% - 150px);" onclick="deactive('mapsButton'); hide('titleScreenDiv'); show('mapScreenDiv'); grid = new Grid(gridWidth, gridHeight, gridRes); grid.draw();">
                     <div class="jigglediv"></div>
                     <button class="jigglebutton">Create</button>
                 </div>
@@ -103,7 +117,7 @@
                 
                 <script>
 
-                    let p = 'optionsDivControls';
+                    p = 'optionsDivControls';
 
                     appendSliderNum(p, ['0px', '0px'], ['100%', '100px'], 'Testing NumSlider:', [0, 100], 69, (e) => { return; });
 
@@ -119,6 +133,8 @@
                     appendSliderNum(p, ['0px', '900px'], ['100%', '100px'], 'Testing Number 2:', [0, 100], 69, (e) => { return; });
 
                 </script>
+
+                <button class="dashed" style="top: 410px; left: 5%; width: 90%; height: 50px;">testing dashes</button>
 
             </div>
 
@@ -138,24 +154,240 @@
 
     </div>
 
+    <!-- map screen -->
     <div class="hidden" id="mapScreenDiv" style="width: 100%; height: 100%;">
 
-        <div class="mechcontainer" style="width: 50px; height: 50px; top: 10px; left: 10px;">
-            <div></div>
-            <button class="icon">
-                <img src="images/gear.png" href="settings" style="width: 40px; height: 40px; top: 2px; left: 4px;">
+        <canvas id="gridCanv" style="position: absolute; top: 100px; left: 100px; width: 1000%; height: 1000%; transform-origin: 0px 0px;">
+
+        </canvas>
+
+        <canvas id="gridDrawCanv" style="position: absolute; top: 100px; left: 100px; width: 1000%; height: 1000%; transform-origin: 0px 0px;">
+
+        </canvas>
+
+        <!-- tools -->
+        <div id="navbar" class="panel" style="width: calc(100% + 1px); height: 55px; top: -10px; left: -1px; overflow-y: visible;">
+
+            <div id="toolsDiv" style="width: calc(50% - 20px); height: 45px; top: 8px; left: max(calc(20% + 15px), 260px); overflow-y: visible;">
+
+                <script>
+    
+                    addEventListener('resize', (e) => {
+    
+                        getElem('toolsDiv').style.width = `calc(100% - ${getElem('toolsDivNavbarContainer').clientWidth + getElem('objectsDivNavbarContainer').clientWidth + 20}px)`;
+    
+                    });
+    
+                    addEventListener('load', (e) => {
+    
+                        getElem('toolsDiv').style.width = `calc(100% - ${getElem('toolsDivNavbarContainer').clientWidth + getElem('objectsDivNavbarContainer').clientWidth + 20}px)`;
+    
+                        getElem('toolsDiv').style.overflowY = 'visible';
+    
+                    });
+    
+                </script>
+                    
+                <div class="tab toolsDivTab" id="toolsDivPen" style="top: 0px; width: 100%; height: 100%; overflow-y: visible;">
+    
+                    <script>
+    
+                        p = 'toolsDivPen';
+    
+                        appendNum(p, ['0px', '-5px'], ['30%', '50px'], 'Size', [1, 16], 1, (e) => { tools[0].size = parseInt(e.value); }, true, ['0px', '-5px'], ['160px', '50px']);
+                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Strength', [0, 100], 100, (e) => { tools[0].opacity[0] = parseInt(e.value) / 100; }, true, ['160px', '-5px'], ['180px', '50px']);
+    
+                        appendDropdown(p, ['60%', '-5px'], ['30%', '50px'], 'Shape', ['Square', 'Circle', 'Hexagon'], (e) => { tools[0].shape = e.value.toLowerCase(); }, true, ['340px', '-5px'], ['160px', '50px']);
+    
+                    </script>
+    
+                </div>
+
+                <div class="tab toolsDivTab hidden" id="toolsDivBrush" style="top: 0px; width: 100%; height: 100%; overflow-y: visible;">
+
+                    <script>
+    
+                        p = 'toolsDivBrush';
+    
+                        appendNum(p, ['0px', '-5px'], ['30%', '50px'], 'Size', [1, 16], 1, (e) => { tools[1].size = parseInt(e.value); }, true, ['0px', '-5px'], ['160px', '50px']);
+                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Start', [0, 100], 100, (e) => { tools[1].opacity[0] = parseInt(e.value); }, true, ['160px', '-5px'], ['170px', '50px']);
+                        appendNum(p, ['60%', '-5px'], ['30%', '50px'], 'End', [0, 100], 5, (e) => { tools[1].opacity[1] = parseInt(e.value); }, true, ['330px', '-5px'], ['160px', '50px']);
+    
+                    </script>
+
+                </div>
+
+                <div class="tab toolsDivTab hidden" id="toolsDivErase" style="top: 0px; width: 100%; height: 100%; overflow-y: visible;">
+
+                    <script>
+    
+                        p = 'toolsDivErase';
+    
+                        appendNum(p, ['0px', '-5px'], ['30%', '50px'], 'Size', [1, 16], 1, (e) => { tools[2].size = parseInt(e.value); }, true, ['0px', '-5px'], ['160px', '50px']);
+                        
+                        appendDropdown(p, ['60%', '-5px'], ['30%', '50px'], 'Shape', ['Square', 'Circle', 'Hexagon'], (e) => { tools[2].shape = e.value.toLowerCase(); }, true, ['160px', '-5px'], ['160px', '50px']);
+    
+                    </script>
+
+                </div>
+
+                <div class="tab toolsDivTab hidden" id="toolsDivFill" style="top: 0px; width: 100%; height: 100%; overflow-y: visible;">
+
+                    <script>
+
+                        p = 'toolsDivFill';
+
+                        appendSwitch(p, ['0px', '-5px'], ['30%', '50px'], 'Ignore Strength', false, (e) => { tools[3].opacity[1] = e; }, true, ['0px', '-5px'], ['195px', '50px']);
+                        
+                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Strength', [0, 100], 100, (e) => { tools[3].opacity[0] = parseInt(e.value) / 100; }, true, ['195px', '-5px'], ['180px', '50px']);
+
+                    </script>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div id="toolsDivNavbarContainer" style="top: 0px; left: 5px; width: 20%; min-width: 250px; height: 45px;">
+            <div class="navbar" id="toolsDivNavbar">
+                <script>appendNavbar('toolsDivNavbar', '0px', ['Pen', 'Brush', 'Erase', 'Fill'], getElem('toolsDiv'), (id) => { selectedTool = tools[id]; })</script>
+            </div>
+        </div>
+
+        <!-- objects -->
+        <div class="panel" id="objectsDiv" style="width: 400px; height: calc(100% - 55px); top: 50px; left: calc(100% + 405px);">
+
+            <div class="tab objectsDivTab" id="objectsDivBiomes" style="top: 0px; height: 100%;">
+
+                <button class="dashed" style="top: 10px; left: 5%; width: 90%; height: 50px;" onclick="new Biome('Biome', 'BIO', new Color(0, 255, 0, 1))">+ New Biome</button>
+
+            </div>
+
+            <div class="tab objectsDivTab hidden" id="objectsDivResources" style="top: 0px; height: 100%;">
+                
+                <button class="dashed" style="top: 10px; left: 5%; width: 90%; height: 50px;" onclick="console.log('new res')">+ New Resource</button>
+
+            </div>
+
+            <div class="tab objectsDivTab hidden" id="objectsDivFactions" style="top: 0px; height: 100%;">
+
+                <button class="dashed" style="top: 10px; left: 5%; width: 90%; height: 50px;" onclick="console.log('new fac')">+ New Faction</button>
+                
+            </div>
+
+            <div class="tab objectsDivTab hidden" id="objectsDivPOIs" style="top: 0px; height: 100%;">
+
+                <button class="dashed" style="top: 10px; left: 5%; width: 90%; height: 50px;" onclick="console.log('new poi')">+ New POI</button>
+                
+            </div>
+
+        </div>
+
+        <div id="objectsButton" class="mechcontainer" style="width: 40px; height: 45px; top: 55px; left: calc(100% - 45px); border-radius: 20px 20px 20px 20px;" onclick="toggleSel(this); toggleMove('objectsButton', ['calc(100% - 45px)', '55px'], ['calc(100% - 450px)', '55px']); toggleMove('objectsDiv', ['calc(100% - 405px)', '50px'], ['calc(100% + 405px)', '50px']);">
+            <div style="border-radius: 10px 10px 10px 10px;"></div>
+            <button id="objectsButtonButton" style="font-size: 24px; border-radius: 10px 10px 10px 10px;">
+                +
             </button>
         </div>
 
+        <div id="objectsDivNavbarContainer" style="top: 0px; right: 5px; width: 30%; min-width: 330px; height: 50px;">
+            <div class="navbar" id="objectsDivNavbar">
+                <script>appendNavbar('objectsDivNavbar', 'calc(100% - 100px)', ['Biomes', 'Resources', 'Factions', 'POIs'], getElem('objectsDiv'));</script>
+            </div>
+        </div>
+
+        <!-- everything that should move with the settings and view select panels -->
+        <div id="viewSelectorContainer" style="left: 0px; top: 0px;">
+
+            <div id="viewSelectorDiv" class="panel" style="width: 200px; height: 360px; top: 50px; left: -205px;">
+
+                <h3 style="font-size: 18px; top: -8px; left: 10px; height: 100px;">Opacity %</h3>
+
+                <script>
+
+                    p = 'viewSelectorDiv';
+
+                    appendNum(p, ['0px', '30px'], ['100%', '50px'], 'POI', [0, 100], 100, (e) => { grid.poiA = parseInt(e.value) / 100; });
+                    appendNum(p, ['0px', '80px'], ['100%', '50px'], 'Faction', [0, 100], 50, (e) => { grid.facA = parseInt(e.value) / 100; });
+                    appendNum(p, ['0px', '130px'], ['100%', '50px'], 'Resource', [0, 100], 30, (e) => { grid.resA = parseInt(e.value) / 100; });
+                    appendNum(p, ['0px', '180px'], ['100%', '50px'], 'Biome', [0, 100], 100, (e) => { grid.bioA = parseInt(e.value) / 100; });
+                    
+                    appendNum(p, ['0px', '230px'], ['100%', '50px'], 'Border', [0, 100], 100, (e) => { grid.borderColor.a = parseInt(e.value) / 100; });
+
+                </script>
+
+                <div class="mechcontainer" style="width: calc(100% - 20px); height: 50px; top: 290px; left: 10px;" onclick="grid.draw();">
+                    <div class="jigglediv"></div>
+                    <button class="jigglebutton">Apply</button>
+                </div>
+
+            </div>
+    
+            <div id="viewSelectorButton" class="mechcontainer" style="width: 35px; height: 40px; top: 115px; left: 10px; border-radius: 20px 20px 20px 20px;" onclick="toggleViewSelector(); toggleMove('viewSelectorButton', ['10px', '115px'], ['215px', '115px']); toggleMove('viewSelectorDiv', ['5px', '50px'], ['-205px', '50px']); toggleMove('settingsButton', ['10px', '55px'], ['215px', '55px']); toggleSel(this);">
+                <div style="border-radius: 20px 20px 20px 20px;"></div>
+                <button id="viewSelectorButtonButton" style="font-size: 18px; border-radius: 20px 20px 20px 20px;">
+                    &gt;
+                </button>
+            </div>
+
+            <div id="settingsButton" class="mechcontainer" style="width: 45px; height: 50px; top: 55px; left: 10px;" onclick="toggleMove('viewSelectorContainer', ['0px', '0px'], ['310px', '0px']); toggleMove('settingsDiv', ['-305px', '50px'], ['10px', '50px']); toggleSel(this);">
+                <div style="border-radius: 10px 10px 10px 10px;"></div>
+                <button id="settingsButtonButton" class="icon" style="border-radius: 10px 10px 10px 10px;">
+                    <img src="images/gear.png" href="settings" style="width: 37px; height: 37px; top: 3px; left: 3px;">
+                </button>
+            </div>
+
+        </div>
+
+        <div id="settingsDiv" class="panel" style="width: 300px; height: calc(100% - 100px); top: 50px; left: -305px;">
+
+            <h3 style="font-size: 18px; top: -8px; left: 10px; height: 100px;">Settings</h3>
+
+            <div class="mechcontainer" style="width: 90%; height: 50px; top: calc(100% - 70px); left: 5%;" onclick="hide('mapScreenDiv'); show('titleScreenDiv'); grid.remove();">
+                <div class="jigglediv"></div>
+                <button class="jigglebutton">Exit to Main Menu</button>
+            </div>
+
+        </div>
+
+        <!-- hex info panel -->
+         <div id="hexinfo" class="panel hidden" style="width: 200px; left: 0px; top: 0px; overflow: hidden; transition: height 0.1s ease-out;">
+
+            <h4 id="hexinfoTitle" style="top: -20px; left: 5px; width: 190px; height: 40px;">
+                Hexagon (0, 0)
+            </h4>
+
+            <ul id="hexinfoBio" style="width: 190px; margin-top: 30px;">
+                <li>biome 1: 100%</li>
+                <li>biome 2: 69%</li>
+                <li>biome 3: 420%</li>
+            </ul>
+
+            <ul id="hexinfoRes" style="width: 190px;">
+                <li>res 1: 100%</li>
+                <li>res 2: 69%</li>
+                <li>res 3: 420%</li>
+            </ul>
+
+         </div>
 
     </div>
     
     <!-- these scripts may reference elems -->
     <script src="scripts/ui/button_text_jiggler.js"></script>
-	<script src="scripts/gameFuncs.js"></script>
+	<script src="scripts/defs/gameFuncs.js"></script>
 	<script src="scripts/ui/themes.js"></script>
-	<script src="scripts/documentListeners.js"></script>
-	<script src="scripts/draw.js"></script>
+	<script src="scripts/defs/objects/basicClasses.js"></script>
+	<script src="scripts/defs/documentListeners.js"></script>
+	<script src="scripts/defs/objects/biome.js"></script>
+	<script src="scripts/defs/objects/resource.js"></script>
+	<script src="scripts/defs/objects/faction.js"></script>
+	<script src="scripts/defs/objects/poi.js"></script>
+	<script src="scripts/defs/objects/hex.js"></script>
+	<script src="scripts/defs/objects/grid.js"></script>
+	<script src="scripts/defs/tools.js"></script>
+	<script src="scripts/defs/draw.js"></script>
 	
 </body>
 

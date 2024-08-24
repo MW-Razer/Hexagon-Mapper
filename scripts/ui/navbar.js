@@ -1,10 +1,10 @@
 // setup navbars in panels
 
-function appendNavbar(navbar, tabHeight, options = []) {
+function appendNavbar(navbar, tabHeight, options = [], parent = null, tabFunc = null, ) {
 
     navbar = getElem(navbar);
 
-    let div = navbar.parentElement;
+    let div = parent == null ? navbar.parentElement : parent;
     div.style.overflowY = 'hidden';
 
     let d = document.createElement('div');
@@ -26,7 +26,7 @@ function appendNavbar(navbar, tabHeight, options = []) {
 
         b.innerHTML = options[i];
 
-        b.onclick = function() {
+        b.onclick = tabFunc == null ? function() {
 
             selGroup(this, this.parentElement.children);
 
@@ -34,7 +34,17 @@ function appendNavbar(navbar, tabHeight, options = []) {
 
             showGroup(document.getElementById(`${div.id}${this.innerHTML}`), `${div.id}Tab`);
 
-        }
+        } : function() {
+
+            selGroup(this, this.parentElement.children);
+
+            document.getElementById(`${navbar.id}Underline`).style.left = this.style.left;
+
+            showGroup(document.getElementById(`${div.id}${this.innerHTML}`), `${div.id}Tab`);
+
+            tabFunc(i);
+
+        };
 
         navbar.appendChild(b);
 

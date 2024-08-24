@@ -1,6 +1,6 @@
 // boolean selector (switch)
 
-function appendSwitch(elem, pos, dim, label, val, inputFunc) {
+function appendSwitch(elem, pos, dim, label, val, inputFunc, rightText = false, minPos = null, minDim = null) {
 
     elem = getElem(elem);
 
@@ -10,8 +10,27 @@ function appendSwitch(elem, pos, dim, label, val, inputFunc) {
     d.style.left = pos[0];
     d.style.top = pos[1];
 
+    if (minPos != null) {
+
+        d.style.left = `max(${pos[0]}, ${minPos[0]})`;
+        d.style.top = `max(${pos[1]}, ${minPos[1]})`;
+
+    } else {
+
+        d.style.left = pos[0];
+        d.style.top = pos[1];
+
+    }
+
     d.style.width = dim[0];
     d.style.height = dim[1];
+
+    if (minDim != null) {
+
+        d.style.minWidth = minDim[0];
+        d.style.minHeight = minDim[1];
+
+    }
 
     let s = document.createElement('div');
     s.classList.add('switch');
@@ -25,6 +44,16 @@ function appendSwitch(elem, pos, dim, label, val, inputFunc) {
     let p = document.createElement('p');
     p.classList.add('clickthru');
     p.innerHTML = `${label}`;
+
+    if (rightText === true) {
+
+        p.style.right = 'calc(5% + 70px)';
+
+    } else {
+
+        p.style.left = '5%';
+
+    }
 
     d.onclick = function() {
 

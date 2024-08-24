@@ -214,6 +214,8 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--input-color-hover', 'rgb(190, 220, 240)'],
     ['--input-color-active', 'rgb(150, 200, 240)'],
     ['--input-font-color-active', 'rgb(0, 0, 0)'],
+    // buttons
+    ['--button-border-radius', '10px 10px 10px 10px'],
     // mechanical buttons
     ['--mech-color', 'rgb(240, 240, 240)'],
     ['--mech-div-color', 'rgb(200, 200, 200)'],
@@ -238,8 +240,14 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
 	['--mech-border-radius', '20px 5px 20px 5px'],
     // panels
     ['--panel-color', 'rgb(240, 240, 240)'],
+    ['--panel-color-hover', 'rgb(210, 210, 210)'],
+    ['--panel-color-active', 'rgb(120, 170, 220)'],
+    ['--panel-color-sel', 'rgb(150, 200, 250)'],
+    ['--panel-color-hover-sel', 'rgb(100, 170, 250)'],
+    ['--panel-color-active-sel',  'rgb(80, 140, 250)'],
     ['--panel-shadow', '1px 3px 2px rgba(0, 0, 0, 0.5)'],
     ['--panel-border-color', 'rgb(10, 10, 10)'],
+    ['--panel-border-color-sel', 'rgb(10, 10, 80)'],
     ['--panel-border-radius', '10px 10px 10px 10px'],
     // tabs
     ['--navbar-color', 'rgb(230, 230, 230)'],
@@ -269,7 +277,7 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--slider-handle-border-radius', '12.5px 12.5px 12.5px 12.5px'],
     // switches
     ['--switch-color', 'rgb(180, 180, 180)'],
-    ['--switch-color-on', 'rgb(100, 180, 250)'],
+    ['--switch-color-on', 'rgb(90, 160, 240)'],
     ['--switch-border-color', 'rgb(120, 120, 120)'],
     ['--switch-handle-border-radius', '5px 5px 5px 5px'],
     ['--switch-handle-color', 'rgb(250, 250, 250)'],
@@ -311,6 +319,8 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--input-color-hover', 'rgb(40, 40, 60)'],
     ['--input-color-active', 'rgb(40, 40, 90)'],
     ['--input-font-color-active', 'rgb(255, 255, 255)'],
+    // buttons
+    ['--button-border-radius', '10px 10px 10px 10px'],
     // mechanical buttons
     ['--mech-color', 'rgb(40, 40, 60)'],
     ['--mech-div-color', 'rgb(20, 20, 40)'],
@@ -335,8 +345,14 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
 	['--mech-border-radius', '20px 5px 20px 5px'],
     // panels
     ['--panel-color', 'rgb(30, 30, 30)'],
+    ['--panel-color-hover', 'rgb(60, 60, 60)'],
+    ['--panel-color-active', 'rgb(50, 50, 100)'],
+    ['--panel-color-sel', 'rgb(50, 50, 110)'],
+    ['--panel-color-hover-sel', 'rgb(70, 70, 130)'],
+    ['--panel-color-active-sel',  'rgb(40, 40, 80)'],
     ['--panel-shadow', '1px 3px 2px rgba(0, 0, 0, 0.5)'],
     ['--panel-border-color', 'rgb(210, 210, 210)'],
+    ['--panel-border-color-sel', 'rgb(200, 200, 250)'],
     ['--panel-border-radius', '10px 10px 10px 10px'],
     // tabs
     ['--navbar-color', 'rgb(40, 40, 40)'],
@@ -407,6 +423,8 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--input-color-hover', 'rgb(10, 15, 10)'],
     ['--input-color-active', 'rgb(20, 40, 20)'],
     ['--input-font-color-active', 'rgb(70, 250, 70)'],
+    // buttons
+    ['--button-border-radius', '5px 5px 5px 5px'],
     // mechanical buttons
     ['--mech-color', 'rgb(10, 15, 10)'],
     ['--mech-div-color', 'rgb(5, 10, 5)'],
@@ -431,8 +449,14 @@ const matrix = new Theme('Matrix', 'matrix', [
 	['--mech-border-radius', '5px 5px 5px 5px'],
     // panels
     ['--panel-color', 'rgb(5, 10, 5)'],
+    ['--panel-color-hover', 'rgb(10, 20, 10)'],
+    ['--panel-color-active', 'rgb(10, 60, 10)'],
+    ['--panel-color-sel', 'rgb(5, 30, 5)'],
+    ['--panel-color-hover-sel', 'rgb(15, 45, 15)'],
+    ['--panel-color-active-sel',  'rgb(0, 60, 0)'],
     ['--panel-shadow', '1px 3px 2px rgba(10, 200, 10, 0.5)'],
     ['--panel-border-color', 'rgb(10, 210, 10)'],
+    ['--panel-border-color-sel', 'rgb(5, 250, 5)'],
     ['--panel-border-radius', '5px 5px 5px 5px'],
     // tabs
     ['--navbar-color', 'rgb(10, 15, 10)'],
@@ -503,6 +527,8 @@ const blood_moon = new Theme('Blood Moon', 'blood_moon', [
     ['--input-color-hover', 'rgb(15, 10, 10)'],
     ['--input-color-active', 'rgb(40, 20, 20)'],
     ['--input-font-color-active', 'rgb(250, 150, 150)'],
+    // buttons
+    ['--button-border-radius', '10px 10px 15px 10px'],
     // mechanical buttons
     ['--mech-color', 'linear-gradient(90deg, rgba(200,10,10,1) 0%, rgba(80,20,20,1) 40%, rgba(20,10,10,1) 100%)'],
     ['--mech-div-color', 'linear-gradient(90deg, rgba(150,10,10,1) 0%, rgba(50,10,10,1) 40%, rgba(10,5,5,1) 100%)'],
@@ -527,8 +553,14 @@ const blood_moon = new Theme('Blood Moon', 'blood_moon', [
 	['--mech-border-radius', '5px 5px 20px 5px'],
     // panels
     ['--panel-color', 'linear-gradient(0deg, rgba(30,10,10,1) 0%, rgba(5,5,5,1) 100%)'],
+    ['--panel-color-hover', 'linear-gradient(0deg, rgba(50,10,10,1) 0%, rgba(25,5,5,1) 100%)'],
+    ['--panel-color-active', 'linear-gradient(0deg, rgba(45,15,15,1) 0%, rgba(20,10,10,1) 100%)'],
+    ['--panel-color-sel', 'linear-gradient(0deg, rgba(20,5,5,1) 0%, rgba(70,5,5,1) 49%, rgba(20,5,5,1) 100%)'],
+    ['--panel-color-hover-sel', 'linear-gradient(0deg, rgba(20,10,10,1) 0%, rgba(80,5,5,1) 49%, rgba(20,10,10,1) 100%)'],
+    ['--panel-color-active-sel',  'linear-gradient(0deg, rgba(30,20,20,1) 0%, rgba(90,20,20,1) 49%, rgba(30,20,20,1) 100%)'],
     ['--panel-shadow', '1px 3px 2px rgba(100, 10, 10, 0.5)'],
     ['--panel-border-color', 'rgb(100, 10, 10)'],
+    ['--panel-border-color-sel', 'rgb(200, 20, 20)'],
     ['--panel-border-radius', '5px 5px 10px 5px'],
     // tabs
     ['--navbar-color', 'rgb(15, 10, 10)'],
@@ -561,14 +593,14 @@ const blood_moon = new Theme('Blood Moon', 'blood_moon', [
     ['--switch-color-on', 'linear-gradient(270deg, rgba(200,20,20,1) 0%, rgba(100,10,10,1) 100%)'],
     ['--switch-border-color', 'rgb(150, 10, 10)'],
     ['--switch-handle-border-radius', '5px 5px 5px 5px'],
-    ['--switch-handle-color', 'rgb(80, 60, 60)'],
-    ['--switch-handle-border-color', 'rgb(80, 60, 60)'],
-    ['--switch-handle-color-on', 'rgb(80, 30, 30)'],
-    ['--switch-handle-border-color-on', 'rgb(80, 30, 30)'],
-    ['--switch-handle-div-color', 'rgb(60, 40, 40)'],
-    ['--switch-handle-div-border-color', 'rgb(60, 40, 40)'],
-    ['--switch-handle-div-color-on', 'rgb(60, 20, 20)'],
-    ['--switch-handle-div-border-color-on', 'rgb(60, 20, 20)']
+    ['--switch-handle-color', 'rgb(180, 140, 140)'],
+    ['--switch-handle-border-color', 'rgb(180, 140, 140)'],
+    ['--switch-handle-color-on', 'rgb(190, 160, 160)'],
+    ['--switch-handle-border-color-on', 'rgb(190, 160, 160)'],
+    ['--switch-handle-div-color', 'rgb(120, 80, 80)'],
+    ['--switch-handle-div-border-color', 'rgb(120, 80, 80)'],
+    ['--switch-handle-div-color-on', 'rgb(120, 90, 90)'],
+    ['--switch-handle-div-border-color-on', 'rgb(120, 90, 90)']
 ]);
 
 /*
