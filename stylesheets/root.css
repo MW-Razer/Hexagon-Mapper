@@ -86,6 +86,7 @@
     --panel-border-color: rgb(10, 10, 10);
     --panel-border-color-sel: rgb(10, 10, 80);
     --panel-border-border-radius: 10px 10px 10px 10px;
+    --panel-color-transparent: rgba(240, 240, 240, 0.5);
 
     /* tabs */
     --navbar-color: rgb(230, 230, 230);

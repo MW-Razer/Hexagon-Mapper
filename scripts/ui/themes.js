@@ -249,6 +249,7 @@ const cool_light = new Theme('Cool Light', 'cool_light', [
     ['--panel-border-color', 'rgb(10, 10, 10)'],
     ['--panel-border-color-sel', 'rgb(10, 10, 80)'],
     ['--panel-border-radius', '10px 10px 10px 10px'],
+    ['--panel-color-transparent', 'rgba(240, 240, 240, 0.5)'],
     // tabs
     ['--navbar-color', 'rgb(230, 230, 230)'],
     ['--navbar-border-radius', '10px 10px 0px 0px'],
@@ -354,6 +355,7 @@ const cool_dark = new Theme('Cool Dark', 'cool_dark', [
     ['--panel-border-color', 'rgb(210, 210, 210)'],
     ['--panel-border-color-sel', 'rgb(200, 200, 250)'],
     ['--panel-border-radius', '10px 10px 10px 10px'],
+    ['--panel-color-transparent', 'rgba(30, 30, 30, 0.5)'],
     // tabs
     ['--navbar-color', 'rgb(40, 40, 40)'],
     ['--navbar-border-radius', '10px 10px 0px 0px'],
@@ -458,6 +460,7 @@ const matrix = new Theme('Matrix', 'matrix', [
     ['--panel-border-color', 'rgb(10, 210, 10)'],
     ['--panel-border-color-sel', 'rgb(5, 250, 5)'],
     ['--panel-border-radius', '5px 5px 5px 5px'],
+    ['--panel-color-transparent', 'rgba(5, 10, 5, 0.5)'],
     // tabs
     ['--navbar-color', 'rgb(10, 15, 10)'],
     ['--navbar-border-radius', '5px 5px 0px 0px'],
@@ -562,6 +565,7 @@ const blood_moon = new Theme('Blood Moon', 'blood_moon', [
     ['--panel-border-color', 'rgb(100, 10, 10)'],
     ['--panel-border-color-sel', 'rgb(200, 20, 20)'],
     ['--panel-border-radius', '5px 5px 10px 5px'],
+    ['--panel-color-transparent', 'linear-gradient(0deg, rgba(30,10,10,0.5) 0%, rgba(5,5,5,0.5) 100%)'],
     // tabs
     ['--navbar-color', 'rgb(15, 10, 10)'],
     ['--navbar-border-radius', '5px 5px 0px 0px'],

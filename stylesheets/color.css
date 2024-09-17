@@ -1,0 +1,26 @@
+/* color picker elem */
+
+.colorcontainer {
+    position: absolute;
+    height: 50px;
+    background: var(--compound-background-color);
+    transition: background-color 0.2s ease-out, background-image 0.1s ease-out;
+}
+
+.colorcontainer:hover {
+    background: var(--compound-background-color-hover);
+}
+
+.colorcontainer:active {
+    background: var(--compound-background-color-active);
+}
+
+.color {
+    right: 5%;
+    top: 10px;
+}
+
+.colorlabel {
+    left: 5%;
+    top: 0px;
+}

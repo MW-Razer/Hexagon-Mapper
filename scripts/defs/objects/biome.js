@@ -133,9 +133,16 @@ class Biome {
 
     }
 
+    // returns quick info string
+    getQuickInfo() {
+
+        return `Biome: <span style="color: ${grid.selectedObject.color.toStr()}; text-decoration: underline; text-decoration-thickness: 2px;"><span style="color: var(--text-color);">${this.name}</span></span>`;
+
+    }
+
 }
 
-let biome4 = new Biome('0', 'void', new Color(0, 0, 0, 1));
-let biome3 = new Biome('b', 'blue', new Color(0, 0, 255, 1));
-let biome2 = new Biome('g', 'green', new Color(0, 255, 0, 1));
-let biome1 = new Biome('r', 'red', new Color(255, 0, 0, 1));
+let biome4 = new Biome('void faction', 'void', new Color(0, 0, 0, 1));
+let biome3 = new Biome('blue faction', 'blue', new Color(0, 0, 255, 1));
+let biome2 = new Biome('green faction', 'green', new Color(0, 255, 0, 1));
+let biome1 = new Biome('red faction', 'red', new Color(255, 0, 0, 1));

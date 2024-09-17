@@ -1,11 +1,11 @@
-// setup number boxes
+// setup color picker thingy
 
-function appendNum(elem, pos, dim, label, range, val, inputFunc, rightText = false, minPos = null, minDim = null, inputSize = null) {
+function appendColor(elem, pos, dim, label, val, inputFunc, rightText = false, minPos = null, minDim = null, inputSize = null) {
 
     elem = getElem(elem);
 
     let div = document.createElement('div');
-    div.classList.add('numcontainer');
+    div.classList.add('colorcontainer');
 
     if (minPos != null) {
 
@@ -33,20 +33,20 @@ function appendNum(elem, pos, dim, label, range, val, inputFunc, rightText = fal
     underDiv.style.width = `100%`;
     underDiv.style.height = `100%`;
 
-    let num = document.createElement('input');
-    num.type = 'number';
-    num.classList.add('num');
-    num.min = range[0];
-    num.max = range[1];
-    num.value = val;
+    let color = document.createElement('input');
+    color.type = 'color';
+    color.classList.add('color');
+    color.value = val;
+
+    color.id = `${label}input`;
 
     if (inputSize != null) {
-        num.style.width = inputSize[0];
-        num.style.height = inputSize[1];
+        color.style.width = inputSize[0];
+        color.style.height = inputSize[1];
     }
 
     let text = document.createElement('p');
-    text.classList.add('numlabel');
+    text.classList.add('colorlabel');
     text.classList.add('clickthru');
     text.innerHTML = `${label}`;
 
@@ -66,22 +66,20 @@ function appendNum(elem, pos, dim, label, range, val, inputFunc, rightText = fal
 
     underDiv.onclick = function() {
 
-        num.select();
-        num.focus();
+        color.select();
+        color.focus();
+
+        inputFunc(color);
 
     }
 
-    num.oninput = function() {
+    color.oninput = function() {
 
-        this.value = this.value == '' ? 0 : parseFloat(this.value);
+        inputFunc(this);
 
-        if (this.value > parseFloat(this.max)) {
-            this.value = this.max;
-        } else if (this.value < parseFloat(this.min)) {
-            this.value = this.min
-        }
+    }
 
-        this.innerHTML = this.value;
+    color.onclick = function() {
 
         inputFunc(this);
 
@@ -89,7 +87,7 @@ function appendNum(elem, pos, dim, label, range, val, inputFunc, rightText = fal
 
     div.appendChild(underDiv);
     div.appendChild(text);
-    div.appendChild(num);
+    div.appendChild(color);
     elem.appendChild(div);
 
 }

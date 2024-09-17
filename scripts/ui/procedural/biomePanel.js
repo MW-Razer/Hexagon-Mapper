@@ -16,11 +16,16 @@ function appendBiomePanel(elem, pos, dim, id) {
 
         if (!mouse.target.parentElement.classList.contains('warning')) {
 
+            let bioId = parseInt(div.id.split('biomePanel')[1]);
+
             selGroup(getElem(div.id), `biomepanel`);
 
-            selectedBiome = biomes[parseInt(div.id.split('biomePanel')[1])];
+            selectedBiome = biomes[bioId];
 
-            grid.selectedObject = biomes[parseInt(div.id.split('biomePanel')[1])];
+            grid.selectedObject = biomes[bioId];
+            grid.selectedBio = biomes[bioId];
+
+            document.getElementById('objectsDisplay').innerHTML = biomes[bioId].getQuickInfo();
 
         }
 

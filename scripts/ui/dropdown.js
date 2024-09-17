@@ -46,7 +46,11 @@ function appendDropdown(elem, pos, dim, label, options, inputFunc, rightText = f
 
     if (rightText === true) {
 
-        p.style.right = 'max(60%, calc(8% + 100px))';
+        if (minDim != null) {
+            p.style.right = `calc(5% + ${minDim[0] + 15}px)`;
+        } else {
+            p.style.right = 'calc(5% + 115px)';
+        }
 
     } else {
 

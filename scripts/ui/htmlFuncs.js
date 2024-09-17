@@ -198,19 +198,37 @@ function move(elem, pos) {
 }
 
 // reverts elem to pos 2 if pos 1 is the same as current pos
-function toggleMove(elem, p1, p2) {
+function toggleMove(elem, p1, p2, right = false) {
 
   elem = getElem(elem);
 
-  if (p1[0] == elem.style.left && p1[1] == elem.style.top) {
+  if (right === true) {
 
-    elem.style.left = p2[0];
-    elem.style.top = p2[1];
+    if (p1[0] == elem.style.right && p1[1] == elem.style.top) {
+    
+      elem.style.right = p2[0];
+      elem.style.top = p2[1];
+  
+    } else {
+      
+      elem.style.right = p1[0];
+      elem.style.top = p1[1];
+  
+    }
 
   } else {
 
-    elem.style.left = p1[0];
-    elem.style.top = p1[1];
+    if (p1[0] == elem.style.left && p1[1] == elem.style.top) {
+    
+      elem.style.left = p2[0];
+      elem.style.top = p2[1];
+  
+    } else {
+      
+      elem.style.left = p1[0];
+      elem.style.top = p1[1];
+  
+    }
 
   }
 

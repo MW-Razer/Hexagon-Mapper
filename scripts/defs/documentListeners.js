@@ -130,7 +130,7 @@ addEventListener('mousemove', (e) => {
     }
 
     // check elems
-    if (!e.target.parentElement.classList.contains('warning')) {
+    if (e.target.parentElement && !e.target.parentElement.classList.contains('warning')) {
 
         let warnButtons = document.getElementsByClassName('warning');
 

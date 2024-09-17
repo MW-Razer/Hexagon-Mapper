@@ -30,6 +30,11 @@ class Grid {
 
         this.selectedObject = null; // selected bio, res, fac, or poi
 
+        this.selectedBio = null;
+        this.selectedRes = null;
+        this.selectedFac = null;
+        this.selectedPoi = null;
+
         // setup changeable vars
         // opacities
         this.poiA = 1;
@@ -112,6 +117,7 @@ class Grid {
 
         this.drawCtx = this.drawCanv.getContext('2d');
         
+        // setup ui elems involving grid values
 
     }
 
@@ -175,7 +181,7 @@ class Grid {
         let hy = Math.round((cy / (this.hexApothem * 2)) - 1.0);
 
         // console.log(`checking hexes at (${hx}, ${hy})...`);
-        
+
         if (hx > -1 && hy > -1 && hx < this.width && hy < this.width) {
 
             let checkHexes = this.hexes[hx][hy].getNeighbors();

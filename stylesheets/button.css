@@ -90,3 +90,28 @@ button.dashed:active {
     color: var(--mech-font-color-sel);
     transition: top 0.05s ease-out, background-color 0.05s ease-out, background-image 0.1s ease-out;
 }
+
+button.overlay {
+    position: absolute;
+    cursor: var(--cursor-default);
+    user-select: none;
+    font: 16px var(--header-font);
+    border-radius: var(--button-border-radius);
+    border: none;
+    background: var(--panel-color-transparent);
+    background-size: calc(100% + 1px) 100%;
+    color: var(--text-color);
+    transition: right 0.1s ease-out, top 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out, color 0.05s ease-out;
+}
+
+button.overlay:hover {
+    background: var(--panel-color-hover);
+    background-size: calc(100% + 1px) 100%;
+    transition: right 0.1s ease-out, top 0.1s ease-out, background-color 0.1s ease-out, background-image 0.1s ease-out, color 0.05s ease-out;
+}
+
+button.overlay:active {
+    background: var(--panel-color-active);
+    background-size: calc(100% + 1px) 100%;
+    transition: right 0.1s ease-out, top 0.05s ease-out, background-color 0.05s ease-out, background-image 0.1s ease-out;
+}

@@ -1,6 +1,7 @@
 // setup navbars in panels
 
-function appendNavbar(navbar, tabHeight, options = [], parent = null, tabFunc = null, ) {
+// tabFunc executed when a tab button is clicked
+function appendNavbar(navbar, tabHeight, options = [], parent = null, tabFunc = null) {
 
     navbar = getElem(navbar);
 
