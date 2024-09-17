@@ -131,24 +131,7 @@ class Grid {
         
         let dscale = this.z - oldz;
         
-        let px = mouse.x, py = mouse.y;
-        
-        this.translate(-px * dscale, -py * dscale);
-
-        // this.x -= hx * (this.hexSize * 1.5) * dscale;
-        // this.y -= hy * (this.hexApothem * 2) * dscale;
-        
-        // if (this.x + (hexConst.size * 1.5 * (this.width - 1)) * this.zoom - 10 < 0) {
-        //   this.x = -((hexConst.size * 1.5 * (this.width - 1)) * this.zoom - 10);
-        // } else if (this.x + 10 > w) {
-        //   this.x = w - 10;
-        // }
-        
-        // if (this.y + (hexConst.apothem * 2 * (this.height - 1)) * this.zoom - 60 < 0) {
-        //   this.y = -((hexConst.apothem * 2 * (this.height - 1)) * this.zoom - 60);
-        // } else if (this.y + 60 > h) {
-        //   this.y = h - 60;
-        // }
+        this.translate(-transformOrigin[0] * dscale, -transformOrigin[1] * dscale);
     
         this.canv.style.scale = `${this.z} ${this.z}`;
         this.drawCanv.style.scale = `${this.z} ${this.z}`;
@@ -191,8 +174,8 @@ class Grid {
         let hx = Math.round((cx / (this.hexSize * 1.5)) - 1.0);
         let hy = Math.round((cy / (this.hexApothem * 2)) - 1.0);
 
-        //console.log(`checking hexes at (${hx}, ${hy})...`);
-
+        // console.log(`checking hexes at (${hx}, ${hy})...`);
+        
         if (hx > -1 && hy > -1 && hx < this.width && hy < this.width) {
 
             let checkHexes = this.hexes[hx][hy].getNeighbors();

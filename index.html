@@ -194,10 +194,10 @@
     
                         p = 'toolsDivPen';
     
-                        appendNum(p, ['0px', '-5px'], ['30%', '50px'], 'Size', [1, 16], 1, (e) => { tools[0].size = parseInt(e.value); }, true, ['0px', '-5px'], ['160px', '50px']);
-                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Strength', [0, 100], 100, (e) => { tools[0].opacity[0] = parseInt(e.value) / 100; }, true, ['160px', '-5px'], ['180px', '50px']);
+                        appendNum(p, ['0px', '-5px'], ['25%', '50px'], 'Size', [1, 16], 1, (e) => { tools[0].size = parseInt(e.value); }, true, ['0px', '-5px'], ['100px', '50px'], ['50px', '30px']);
+                        appendNum(p, ['25%', '-5px'], ['25%', '50px'], 'Strength', [0, 100], 100, (e) => { tools[0].opacity[0] = parseInt(e.value) / 100; }, true, ['100px', '-5px'], ['140px', '50px'], ['50px', '30px']);
     
-                        appendDropdown(p, ['60%', '-5px'], ['30%', '50px'], 'Shape', ['Square', 'Circle', 'Hexagon'], (e) => { tools[0].shape = e.value.toLowerCase(); }, true, ['340px', '-5px'], ['160px', '50px']);
+                        appendDropdown(p, ['calc(100% - 160px)', '-5px'], ['30%', '50px'], 'Shape', ['Square', 'Circle', 'Hexagon'], (e) => { tools[0].shape = e.value.toLowerCase(); }, true, ['240px', '-5px'], ['160px', '50px']);
     
                     </script>
     
@@ -209,9 +209,11 @@
     
                         p = 'toolsDivBrush';
     
-                        appendNum(p, ['0px', '-5px'], ['30%', '50px'], 'Size', [1, 16], 1, (e) => { tools[1].size = parseInt(e.value); }, true, ['0px', '-5px'], ['160px', '50px']);
-                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Start', [0, 100], 100, (e) => { tools[1].opacity[0] = parseInt(e.value); }, true, ['160px', '-5px'], ['170px', '50px']);
-                        appendNum(p, ['60%', '-5px'], ['30%', '50px'], 'End', [0, 100], 5, (e) => { tools[1].opacity[1] = parseInt(e.value); }, true, ['330px', '-5px'], ['160px', '50px']);
+                        appendNum(p, ['0px', '-5px'], ['30%', '50px'], 'Size', [1, 16], 1, (e) => { tools[1].size = parseInt(e.value); }, true, ['0px', '-5px'], ['100px', '50px'], ['50px', '30px']);
+
+                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Start', [0, 100], 100, (e) => { tools[1].opacity[0] = parseInt(e.value); }, true, ['100px', '-5px'], ['110px', '50px'], ['50px', '30px']);
+
+                        appendNum(p, ['60%', '-5px'], ['30%', '50px'], 'End', [0, 100], 5, (e) => { tools[1].opacity[1] = parseInt(e.value); }, true, ['210px', '-5px'], ['100px', '50px'], ['50px', '30px']);
     
                     </script>
 
@@ -223,9 +225,9 @@
     
                         p = 'toolsDivErase';
     
-                        appendNum(p, ['0px', '-5px'], ['30%', '50px'], 'Size', [1, 16], 1, (e) => { tools[2].size = parseInt(e.value); }, true, ['0px', '-5px'], ['160px', '50px']);
+                        appendNum(p, ['0px', '-5px'], ['30%', '50px'], 'Size', [1, 16], 1, (e) => { tools[2].size = parseInt(e.value); }, true, ['0px', '-5px'], ['100px', '50px'], ['50px', '30px']);
                         
-                        appendDropdown(p, ['60%', '-5px'], ['30%', '50px'], 'Shape', ['Square', 'Circle', 'Hexagon'], (e) => { tools[2].shape = e.value.toLowerCase(); }, true, ['160px', '-5px'], ['160px', '50px']);
+                        appendDropdown(p, ['calc(100% - 160px)', '-5px'], ['30%', '50px'], 'Shape', ['Square', 'Circle', 'Hexagon'], (e) => { tools[2].shape = e.value.toLowerCase(); }, true, ['100px', '-5px'], ['160px', '50px']);
     
                     </script>
 
@@ -239,7 +241,7 @@
 
                         appendSwitch(p, ['0px', '-5px'], ['30%', '50px'], 'Ignore Strength', false, (e) => { tools[3].opacity[1] = e; }, true, ['0px', '-5px'], ['195px', '50px']);
                         
-                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Strength', [0, 100], 100, (e) => { tools[3].opacity[0] = parseInt(e.value) / 100; }, true, ['195px', '-5px'], ['180px', '50px']);
+                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Strength', [0, 100], 100, (e) => { tools[3].opacity[0] = parseInt(e.value) / 100; }, true, ['195px', '-5px'], ['140px', '50px'], ['50px', '30px']);
 
                     </script>
 

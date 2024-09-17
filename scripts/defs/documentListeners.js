@@ -40,6 +40,11 @@ addEventListener('mousedown', (e) => {
         mouse.x /= grid.z;
         mouse.y /= grid.z;
 
+        mouse.x *= window.devicePixelRatio;
+        mouse.y *= window.devicePixelRatio;
+
+        // console.log(mouse.x, mouse.y);
+
         grid.hoverHex = grid.getHexAt(mouse.x, mouse.y);
 
     }
@@ -105,6 +110,11 @@ addEventListener('mousemove', (e) => {
         mouse.x /= grid.z;
         mouse.y /= grid.z;
 
+        mouse.x *= window.devicePixelRatio;
+        mouse.y *= window.devicePixelRatio;
+
+        // console.log(mouse.x, mouse.y);
+
         grid.hoverHex = grid.getHexAt(mouse.x, mouse.y);
 
     }
@@ -146,7 +156,7 @@ addEventListener('wheel', (e) => {
 
     if (grid != null && (e.target.id == 'gridCanv' || e.target.id == 'gridDrawCanv' || e.target.id == 'mapScreenDiv')) {
 
-        grid.zoomBy([mouse.x, mouse.y], grid.z - (grid.z * (e.deltaY / 800)));
+        grid.zoomBy([mouse.x / window.devicePixelRatio, mouse.y / window.devicePixelRatio], grid.z - (grid.z * (e.deltaY / 800)));
 
     }
 

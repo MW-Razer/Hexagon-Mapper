@@ -2,7 +2,7 @@
 
 let openDropdown = null;
 
-function appendDropdown(elem, pos, dim, label, options, inputFunc, rightText = false, minPos = null, minDim = null) {
+function appendDropdown(elem, pos, dim, label, options, inputFunc, rightText = false, minPos = null, minDim = null, inputSize = null) {
 
     elem = getElem(elem);
 
@@ -57,16 +57,25 @@ function appendDropdown(elem, pos, dim, label, options, inputFunc, rightText = f
     let b = document.createElement('button');
     b.classList.add('dropdown');
 
-    b.style.width = `50%`;
-    b.style.height = `30px`;
-
     b.innerHTML = `${options[0]}`;
+
+    if (inputSize != null) {
+        b.style.width = inputSize[0];
+        b.style.height = inputSize[1];
+    } else {
+        b.style.width = `50%`;
+        b.style.height = `30px`;
+    }
 
     let od = document.createElement('div');
     od.classList.add('dropdowndiv');
     od.classList.add('closed');
 
-    od.style.width = `200px`;
+    if (inputSize != null) {
+        od.style.width = inputSize[0];
+    } else {
+        od.style.width = `200px`;
+    }
 
     for (let i = 0; i < options.length; i++) {
 

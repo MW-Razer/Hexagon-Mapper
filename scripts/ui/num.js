@@ -1,6 +1,6 @@
 // setup number boxes
 
-function appendNum(elem, pos, dim, label, range, val, inputFunc, rightText = false, minPos = null, minDim = null) {
+function appendNum(elem, pos, dim, label, range, val, inputFunc, rightText = false, minPos = null, minDim = null, inputSize = null) {
 
     elem = getElem(elem);
 
@@ -39,6 +39,11 @@ function appendNum(elem, pos, dim, label, range, val, inputFunc, rightText = fal
     num.min = range[0];
     num.max = range[1];
     num.value = val;
+
+    if (inputSize != null) {
+        num.style.width = inputSize[0];
+        num.style.height = inputSize[1];
+    }
 
     let text = document.createElement('p');
     text.classList.add('numlabel');
