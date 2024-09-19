@@ -61,7 +61,7 @@ class Grid {
         this.hexPoints = [];
         this.hexStrokePoints = [];
 
-        this.hexLineWidth = this.hexSize / 15;
+        this.hexLineWidth = this.hexSize / 8;
 
         for (let i = 0; i < 6; i++) {
 
@@ -103,6 +103,20 @@ class Grid {
 
         this.ctx = this.canv.getContext('2d');
 
+        // draws borders
+        this.borderCanv = document.getElementById('gridBorderCanv');
+
+        this.borderCanv.width = canvWidth * window.devicePixelRatio;
+        this.borderCanv.height = canvHeight * window.devicePixelRatio;
+
+        this.borderCanv.style.width = `${canvWidth}px`;
+        this.borderCanv.style.height = `${canvHeight}px`;
+
+        this.borderCanv.style.left = `${this.x}px`;
+        this.borderCanv.style.top = `${this.y}px`;
+
+        this.borderCtx = this.borderCanv.getContext('2d');
+
         // draws things in a loop
         this.drawCanv = document.getElementById('gridDrawCanv');
 
@@ -117,7 +131,7 @@ class Grid {
 
         this.drawCtx = this.drawCanv.getContext('2d');
         
-        // setup ui elems involving grid values
+        // testing and debugging
 
     }
 
@@ -140,6 +154,7 @@ class Grid {
         this.translate(-transformOrigin[0] * dscale, -transformOrigin[1] * dscale);
     
         this.canv.style.scale = `${this.z} ${this.z}`;
+        this.borderCanv.style.scale = `${this.z} ${this.z}`;
         this.drawCanv.style.scale = `${this.z} ${this.z}`;
 
     }
@@ -152,28 +167,154 @@ class Grid {
         this.canv.style.left = `${this.x}px`;
         this.canv.style.top = `${this.y}px`;
 
+        this.borderCanv.style.left = `${this.x}px`;
+        this.borderCanv.style.top = `${this.y}px`;
+
         this.drawCanv.style.left = `${this.x}px`;
         this.drawCanv.style.top = `${this.y}px`;
 
     }
 
-    draw() {
+    // update is whether hexes should be updated before drawn
+    draw(update = false) {
+
+        let startTime = new Date().getTime();
+
+        this.ctx.clearRect(0, 0, this.canv.width, this.canv.height);
+
+        if (update === true) {
+
+            // let counter = 0;
+
+            for (let hx = 0; hx < this.width; hx++) {
+
+                for (let hy = 0; hy < this.height; hy++) {
+    
+                    let h = this.hexes[hx][hy];
+    
+                    h.update();
+    
+                    h.draw();
+
+                    // counter++;
+                    // console.log(`Progress: ${counter} / ${this.width * this.height}`);
+    
+                }
+    
+            }
+
+        } else {
+
+            for (let hx = 0; hx < this.width; hx++) {
+
+                for (let hy = 0; hy < this.height; hy++) {
+    
+                    this.hexes[hx][hy].draw();
+    
+                }
+    
+            }
+
+        }
+
+        let endTime = new Date().getTime();
+
+        console.log(`All hexes drawn in: ${endTime - startTime} ms. Updated: ${update}`);
+
+    }
+
+    // draws just the borders
+    drawBorders() {
+
+        let startTime = new Date().getTime();
+
+        this.borderCtx.clearRect(0, 0, this.borderCanv.width, this.borderCanv.height);
+
+        this.borderCtx.lineWidth = this.hexLineWidth;
+
+        this.borderCtx.strokeStyle = this.borderColor.toStr();
+
+        // why is this so much slower bruh
+        /*
+        this.borderCtx.beginPath();
 
         for (let hx = 0; hx < this.width; hx++) {
 
             for (let hy = 0; hy < this.height; hy++) {
 
-                let h = this.hexes[hx][hy];
+                let hex = this.hexes[hx][hy];
 
-                h.update();
+                this.borderCtx.moveTo(hex.points[0][0], hex.points[0][1]);
 
-                h.draw();
+                for (let i = 1; i < hex.points.length; i++) {
+
+                    this.borderCtx.lineTo(hex.points[i][0], hex.points[i][1]);
+
+                }
+
+                this.borderCtx.closePath();
 
             }
 
         }
 
+        this.borderCtx.stroke();
+        */
+
+        for (let hx = 0; hx < this.width; hx++) {
+
+            for (let hy = 0; hy < this.height; hy++) {
+
+                this.hexes[hx][hy].drawBorder();
+
+            }
+
+        }
+
+        let endTime = new Date().getTime();
+
+        console.log(`Borders drawn in: ${endTime - startTime} ms`);
+
     }
+
+    // what was i even thinking
+    /*
+    drawInChunks(update = false, xi, chunkSize, chunkTime) {
+
+        function d(update, xi, chunkSize, chunkTime) {
+
+            let hx = xi;
+
+            let maxX = Math.min(chunkSize + xi, grid.width);
+
+            if (update === false) {
+
+                for (; hx < maxX; hx++) {
+
+                    for (let hy = 0; hy < grid.height; hy++) {
+
+                        grid.hexes[hx][hy].draw();
+
+                    }
+
+                }
+
+            }
+
+            if (hx < grid.width) {
+
+                console.log(hx);
+
+                setTimeout(d(update, hx, chunkSize, chunkTime), chunkTime);
+
+            }
+
+        }
+
+        d(update, xi, chunkSize, chunkTime);
+
+    }
+    */
 
     getHexAt(cx, cy) {
 

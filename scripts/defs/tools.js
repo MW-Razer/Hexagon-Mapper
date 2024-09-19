@@ -35,7 +35,7 @@ class Tool {
 
             grid.drawCtx.beginPath();
 
-            grid.drawCtx.strokeStyle = grid.selectedObject != null ? blendColors([grid.borderColor.getSecondary(75).getNewOpacity(0.5), grid.selectedObject.color.getNewOpacity(0.75)]).toStr() : grid.borderColor.getSecondary(75).toStr();
+            grid.drawCtx.strokeStyle = grid.selectedObject != null ? blendColors([grid.borderColor.getSecondary(75).getNewOpacity(0.5), grid.selectedObject.color.getNewOpacity(0.75)]).toStr() : grid.borderColor.getSecondary(75).getNewOpacity(0.5).toStr();
             grid.drawCtx.lineWidth = grid.hexLineWidth * 2.0;
 
             for (let i = 0; i < targets.list.length; i++) {

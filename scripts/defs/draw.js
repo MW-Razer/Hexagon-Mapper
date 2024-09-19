@@ -12,21 +12,27 @@ function draw() {
 
             // selectedTool.draw(drawAllToolTargets);
 
-            if (mouse.left) {
+            // console.log(mouse.target.id)
 
-                if (grid.selectedObject != null) {
-                    
-                    selectedTool.use(true, drawAllToolTargets);
-        
+            if (mouse.target.id == 'gridDrawCanv') {
+                
+                if (mouse.left) {
+
+                    if (grid.selectedObject != null) {
+                        
+                        selectedTool.use(true, drawAllToolTargets);
+            
+                    } else {
+    
+                        selectedTool.targetFunc(selectedTool.size, selectedTool.opacity, selectedTool.shape, selectedTool.data, true, drawAllToolTargets);
+    
+                    }
+            
                 } else {
-
+    
                     selectedTool.targetFunc(selectedTool.size, selectedTool.opacity, selectedTool.shape, selectedTool.data, true, drawAllToolTargets);
-
+    
                 }
-        
-            } else {
-
-                selectedTool.targetFunc(selectedTool.size, selectedTool.opacity, selectedTool.shape, selectedTool.data, true, drawAllToolTargets);
 
             }
 

@@ -22,7 +22,7 @@ class Hex {
         this.poi = null;
 
         this.points = [];
-        //this.strokePoints = [];
+        this.strokePoints = [];
 
         this.color = new Color(0, 0, 0, 0);
 
@@ -41,7 +41,7 @@ class Hex {
 
             this.points.push([(this.cx + (grid.hexSize + offset) * hexCos[i]), (this.cy + (grid.hexSize + offset) * hexSin[i])]);
 
-            //this.strokePoints.push([(this.cx + (size + lw) * hexCos[i]), (this.cy + (size + lw) * hexSin[i])]);
+            this.strokePoints.push([(this.cx + (grid.hexSize) * hexCos[i]), (this.cy + (grid.hexSize) * hexSin[i])]);
 
         }
 
@@ -85,10 +85,7 @@ class Hex {
 
         grid.ctx.beginPath();
 
-        grid.ctx.lineWidth = grid.hexLineWidth;
-
         grid.ctx.fillStyle = this.color.toStr();
-        grid.ctx.strokeStyle = grid.borderColor.toStr();
 
         grid.ctx.moveTo(this.points[0][0], this.points[0][1]);
 
@@ -101,8 +98,25 @@ class Hex {
         grid.ctx.closePath();
 
         grid.ctx.fill();
-        grid.ctx.stroke();
         
+    }
+
+    drawBorder() {
+
+        grid.borderCtx.beginPath();
+
+        grid.borderCtx.moveTo(this.strokePoints[0][0], this.strokePoints[0][1]);
+
+        for (let i = 1; i < this.strokePoints.length; i++) {
+
+            grid.borderCtx.lineTo(this.strokePoints[i][0], this.strokePoints[i][1]);
+
+        }
+
+        grid.borderCtx.closePath();
+
+        grid.borderCtx.stroke();
+
     }
 
     getNeighbors() {

@@ -96,7 +96,7 @@
 
                 </script>
 
-                <div class="mechcontainer titlebutton" style="width: 300px; height: 50px; bottom: 20px; left: calc(50% - 150px);" onclick="deactive('mapsButton'); hide('titleScreenDiv'); show('mapScreenDiv'); grid = new Grid(gridWidth, gridHeight, gridRes); grid.draw();">
+                <div class="mechcontainer titlebutton" style="width: 300px; height: 50px; bottom: 20px; left: calc(50% - 150px);" onclick="deactive('mapsButton'); hide('titleScreenDiv'); show('mapScreenDiv'); grid = new Grid(gridWidth, gridHeight, gridRes); grid.draw(true); grid.drawBorders();">
                     <div class="jigglediv"></div>
                     <button class="jigglebutton">Create</button>
                 </div>
@@ -163,7 +163,11 @@
 
         </canvas>
 
-        <canvas id="gridDrawCanv" style="position: absolute; top: 100px; left: 100px; width: 1000%; height: 1000%; transform-origin: 0px 0px;">
+        <canvas id="gridBorderCanv" style="position: absolute; top: 100px; left: 100px; width: 1000%; height: 1000%; transform-origin: 0px 0px;">
+
+        </canvas>
+
+        <canvas id="gridDrawCanv" style="position: absolute; top: 100px; left: 100px; width: 1000%; height: 1000%; transform-origin: 0px 0px;"></canvas>
 
         </canvas>
 
@@ -367,7 +371,7 @@
 
                 </script>
 
-                <div class="mechcontainer" style="width: calc(100% - 20px); height: 50px; top: 290px; left: 10px;" onclick="grid.draw();">
+                <div class="mechcontainer" style="width: calc(100% - 20px); height: 50px; top: 290px; left: 10px;" onclick="grid.draw(); grid.drawBorders();">
                     <div class="jigglediv"></div>
                     <button class="jigglebutton">Apply</button>
                 </div>
@@ -402,7 +406,7 @@
 
             </script>
 
-            <div class="mechcontainer" style="width: 30%; height: 50px; top: 30px; right: 5%;" onclick="grid.borderColor = hexToRgb(document.getElementById('Border Color:input').value); grid.draw();">
+            <div class="mechcontainer" style="width: 30%; height: 50px; top: 30px; right: 5%;" onclick="grid.borderColor = hexToRgb(document.getElementById('Border Color:input').value); grid.drawBorders();">
                 <div class="jigglediv"></div>
                 <button class="jigglebutton">Apply</button>
             </div>

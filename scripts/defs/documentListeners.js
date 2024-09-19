@@ -66,6 +66,7 @@ addEventListener('mousedown', (e) => {
         }
     }
 
+    /*
     if (grid != null && mouse.left) {
 
         if (grid.hoverHex != null && grid.selectedObject != null) {
@@ -75,6 +76,7 @@ addEventListener('mousedown', (e) => {
         }
 
     }
+    */
 
 });
 
