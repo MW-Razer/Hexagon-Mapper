@@ -201,7 +201,7 @@
                         p = 'toolsDivPen';
     
                         appendNum(p, ['0px', '-5px'], ['25%', '50px'], 'Size', [1, 16], 1, (e) => { tools[0].size = parseInt(e.value); }, true, ['0px', '-5px'], ['100px', '50px'], ['50px', '30px']);
-                        appendNum(p, ['25%', '-5px'], ['25%', '50px'], 'Strength', [0, 100], 100, (e) => { tools[0].opacity[0] = parseInt(e.value) / 100; }, true, ['100px', '-5px'], ['140px', '50px'], ['50px', '30px']);
+                        appendNum(p, ['25%', '-5px'], ['25%', '50px'], 'Strength', [0, 100], 100, (e) => { tools[0].opacity.start = parseInt(e.value) / 100; }, true, ['100px', '-5px'], ['140px', '50px'], ['50px', '30px']);
     
                         appendDropdown(p, ['calc(100% - 160px)', '-5px'], ['160px', '50px'], 'Shape', ['Square', 'Circle', 'Hexagon'], (e) => { tools[0].shape = e.value.toLowerCase(); }, true, ['240px', '-5px'], ['160px', '50px']);
     
@@ -217,9 +217,9 @@
     
                         appendNum(p, ['0px', '-5px'], ['30%', '50px'], 'Size', [1, 16], 1, (e) => { tools[1].size = parseInt(e.value); }, true, ['0px', '-5px'], ['100px', '50px'], ['50px', '30px']);
 
-                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Start', [0, 100], 100, (e) => { tools[1].opacity[0] = parseInt(e.value); }, true, ['100px', '-5px'], ['110px', '50px'], ['50px', '30px']);
+                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Start', [0, 100], 100, (e) => { tools[1].opacity.start = parseInt(e.value); }, true, ['100px', '-5px'], ['110px', '50px'], ['50px', '30px']);
 
-                        appendNum(p, ['60%', '-5px'], ['30%', '50px'], 'End', [0, 100], 5, (e) => { tools[1].opacity[1] = parseInt(e.value); }, true, ['210px', '-5px'], ['100px', '50px'], ['50px', '30px']);
+                        appendNum(p, ['60%', '-5px'], ['30%', '50px'], 'End', [0, 100], 5, (e) => { tools[1].opacity.end = parseInt(e.value); }, true, ['210px', '-5px'], ['100px', '50px'], ['50px', '30px']);
     
                     </script>
 
@@ -245,9 +245,9 @@
 
                         p = 'toolsDivFill';
 
-                        appendSwitch(p, ['0px', '-5px'], ['30%', '50px'], 'Ignore Strength', false, (e) => { tools[3].opacity[1] = e; }, true, ['0px', '-5px'], ['195px', '50px']);
+                        appendSwitch(p, ['0px', '-5px'], ['30%', '50px'], 'Ignore Strength', false, (e) => { tools[3].opacity.end = e; }, true, ['0px', '-5px'], ['195px', '50px']);
                         
-                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Strength', [0, 100], 100, (e) => { tools[3].opacity[0] = parseInt(e.value) / 100; }, true, ['195px', '-5px'], ['140px', '50px'], ['50px', '30px']);
+                        appendNum(p, ['30%', '-5px'], ['30%', '50px'], 'Strength', [0, 100], 100, (e) => { tools[3].opacity.start = parseInt(e.value) / 100; }, true, ['195px', '-5px'], ['140px', '50px'], ['50px', '30px']);
 
                     </script>
 
@@ -406,7 +406,7 @@
 
             </script>
 
-            <div class="mechcontainer" style="width: 30%; height: 50px; top: 30px; right: 5%;" onclick="grid.borderColor = hexToRgb(document.getElementById('Border Color:input').value); grid.drawBorders();">
+            <div class="mechcontainer" style="width: 30%; height: 40px; top: 30px; right: 5%;" onclick="grid.borderColor = hexToRgb(document.getElementById('Border Color:input').value); grid.drawBorders();">
                 <div class="jigglediv"></div>
                 <button class="jigglebutton">Apply</button>
             </div>

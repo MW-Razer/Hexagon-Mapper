@@ -8,7 +8,7 @@ class Tool {
     constructor(targetFunc, useFunc, data) {
 
         this.size = 1;
-        this.opacity = [1, 1];
+        this.opacity = {start: 1, end: 1};
         this.shape = 'square';
 
         // targetFunc returns an array of target hexes and a center hex for the useFunc [hexes, center]
@@ -35,12 +35,12 @@ class Tool {
 
             grid.drawCtx.beginPath();
 
-            grid.drawCtx.strokeStyle = grid.selectedObject != null ? blendColors([grid.borderColor.getSecondary(75).getNewOpacity(0.5), grid.selectedObject.color.getNewOpacity(0.75)]).toStr() : grid.borderColor.getSecondary(75).getNewOpacity(0.5).toStr();
+            grid.drawCtx.strokeStyle = grid.selectedObject != null ? blendColors([grid.borderColor.getSecondary(75).getNewOpacity(0.5), grid.selectedObject.color.getNewOpacity(0.75)]).toStr() : grid.borderColor.getNewOpacity(1.0).getSecondary(75).toStr();
             grid.drawCtx.lineWidth = grid.hexLineWidth * 2.0;
 
             for (let i = 0; i < targets.list.length; i++) {
     
-                let hex = grid.hexes[targets.list[i][0]][targets.list[i][1]];
+                let hex = grid.hexes[targets.list[i].x][targets.list[i].y];
 
                 grid.drawCtx.moveTo(hex.points[0][0], hex.points[0][1]);
 
@@ -68,7 +68,7 @@ class Tool {
 
             for (let i = 0; i < target.length; i++) {
     
-                let hex = grid.hexes[target[i][0]][target[i][1]];
+                let hex = grid.hexes[target[i].y][target[i].x];
 
                 grid.drawCtx.moveTo(hex.points[0][0], hex.points[0][1]);
 
@@ -93,6 +93,71 @@ class Tool {
 
 const tools = [
     // pen
+    new Tool((size, opacity, shape, data, drawHexes, drawHexesAll) => {
+
+        let hexes = [];
+
+        switch (shape) {
+            case 'square':
+
+                let sx = grid.hoverHex.x - Math.floor(size / 2);
+                let sy = grid.hoverHex.y - Math.floor(size / 2);
+
+                let mx = grid.hoverHex.x + Math.ceil(size / 2) - 1;
+                let my = grid.hoverHex.y + Math.ceil(size / 2) - 1;
+
+                // console.log(sx, sy, mx, my);
+
+                for (let x = sx; x <= mx; x++) {
+
+                    for (let y = sy; y <= my; y++) {
+
+                        if (y >= 0 && x >= 0 && y < grid.height && x < grid.width) {
+                            hexes.push({x: x, y: y, opacity: opacity.start});
+                        }
+
+                    }
+
+                }
+
+                break;
+        }
+
+        //console.log(hexes, grid.hoverHex);
+
+        if (drawHexes === true) {
+            tools[0].draw({list: hexes, center: grid.hoverHex}, drawHexesAll);
+        }
+
+        return {list: hexes, center: grid.hoverHex};
+
+    }, (targets, data) => {
+
+        for (let i = 0; i < targets.list.length; i++) {
+
+            grid.selectedObject.addHex(grid.hexes[targets.list[i].x][targets.list[i].y], targets.list[i].opacity);
+
+        }
+
+    }, {}),
+    // brush
+    new Tool((size, opacity, shape, data, drawHexes, drawHexesAll) => {
+
+        let hexes = [];
+
+        return [hexes, grid.hoverHex];
+
+    }, (targets, data) => {
+
+        for (let i = 0; i < targets[0].length; i++) {
+
+            grid.selectedObject.addHex(grid.hexes[targets[0][i][0]][targets[0][i][1]], targets[0][i][2]);
+            // console.log(targets[0][i][0], targets[0][i][1]);
+
+        }
+
+    }),
+    // erase
     new Tool((size, opacity, shape, data, drawHexes, drawHexesAll) => {
 
         let hexes = [];
@@ -129,79 +194,9 @@ const tools = [
             tools[0].draw({list: hexes, center: grid.hoverHex}, drawHexesAll);
         }
 
-        return {list: hexes, center: grid.hoverHex};
+        return [hexes, grid.hoverHex];
 
     }, (targets, data) => {
-
-        for (let i = 0; i < targets.list.length; i++) {
-
-            grid.selectedObject.addHex(grid.hexes[targets.list[i][0]][targets.list[i][1]], targets.list[i][2]);
-            // console.log(targets[0][i][0], targets[0][i][1]);
-
-        }
-
-        // let bioId = grid.hoverHex.getBiome(grid.selectedObject.id);
-
-        // if (bioId == null || grid.hoverHex.bio[bioId][1] != tools[0].opacity[0]) {
-
-        //     console.log('executed pen action')
-
-        // }
-
-    }, {}),
-    // brush
-    new Tool((size, opacity, shape) => {
-
-        let hexes = [];
-
-        return [hexes, grid.hoverHex];
-
-    }, (targets) => {
-
-        for (let i = 0; i < targets[0].length; i++) {
-
-            grid.selectedObject.addHex(grid.hexes[targets[0][i][0]][targets[0][i][1]], targets[0][i][2]);
-            // console.log(targets[0][i][0], targets[0][i][1]);
-
-        }
-
-    }),
-    // erase
-    new Tool((size, opacity, shape) => {
-
-        let hexes = [];
-
-        switch (shape) {
-            case 'square':
-
-                let sx = grid.hoverHex.x - (size - 1);
-                let sy = grid.hoverHex.y - (size - 1);
-
-                let mx = grid.hoverHex.x + (size - 1);
-                let my = grid.hoverHex.y + (size - 1);
-
-                // console.log(sx, sy, mx, my);
-
-                for (let x = sx; x <= mx; x++) {
-
-                    for (let y = sy; y <= my; y++) {
-
-                        if (y >= 0 && x >= 0 && y < grid.height && x < grid.width) {
-                            hexes.push([x, y, opacity[0]]);
-                        }
-
-                    }
-
-                }
-
-                break;
-        }
-
-        //console.log(hexes, grid.hoverHex);
-
-        return [hexes, grid.hoverHex];
-
-    }, (targets) => {
 
         for (let i = 0; i < targets[0].length; i++) {
 

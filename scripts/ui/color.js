@@ -29,6 +29,10 @@ function appendColor(elem, pos, dim, label, val, inputFunc, rightText = false, m
 
     }
 
+    div.onclick = function() {
+        color.click();
+    };
+
     let underDiv = document.createElement('div');
     underDiv.style.width = `100%`;
     underDiv.style.height = `100%`;

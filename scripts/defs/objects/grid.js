@@ -277,45 +277,6 @@ class Grid {
 
     }
 
-    // what was i even thinking
-    /*
-    drawInChunks(update = false, xi, chunkSize, chunkTime) {
-
-        function d(update, xi, chunkSize, chunkTime) {
-
-            let hx = xi;
-
-            let maxX = Math.min(chunkSize + xi, grid.width);
-
-            if (update === false) {
-
-                for (; hx < maxX; hx++) {
-
-                    for (let hy = 0; hy < grid.height; hy++) {
-
-                        grid.hexes[hx][hy].draw();
-
-                    }
-
-                }
-
-            }
-
-            if (hx < grid.width) {
-
-                console.log(hx);
-
-                setTimeout(d(update, hx, chunkSize, chunkTime), chunkTime);
-
-            }
-
-        }
-
-        d(update, xi, chunkSize, chunkTime);
-
-    }
-    */
-
     getHexAt(cx, cy) {
 
         let hx = Math.round((cx / (this.hexSize * 1.5)) - 1.0);
@@ -352,7 +313,11 @@ class Grid {
 
     remove() {
 
+        this.zoomBy([0, 0], 1);
+
         this.canv = null;
+        this.borderCanv = null;
+        this.drawCanv = null;
 
         grid = null;
 
